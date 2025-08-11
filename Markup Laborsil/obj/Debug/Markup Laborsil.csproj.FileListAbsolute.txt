@@ -1,0 +1,95 @@
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\Markup Laborsil.exe.config
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\Markup Laborsil.exe
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\Markup Laborsil.pdb
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\MetroFramework.Design.dll
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\MetroFramework.dll
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\MetroFramework.Fonts.dll
+C:\Projetos\rotinas winthor\Markup Laborsil\obj\Debug\Markup Laborsil.csproj.AssemblyReference.cache
+C:\Projetos\rotinas winthor\Markup Laborsil\obj\Debug\Markup_Laborsil.Form1.resources
+C:\Projetos\rotinas winthor\Markup Laborsil\obj\Debug\Markup_Laborsil.Properties.Resources.resources
+C:\Projetos\rotinas winthor\Markup Laborsil\obj\Debug\Markup Laborsil.csproj.GenerateResource.cache
+C:\Projetos\rotinas winthor\Markup Laborsil\obj\Debug\Markup Laborsil.csproj.CoreCompileInputs.cache
+C:\Projetos\rotinas winthor\Markup Laborsil\obj\Debug\Markup L.3AD8CB93.Up2Date
+C:\Projetos\rotinas winthor\Markup Laborsil\obj\Debug\Markup Laborsil.exe
+C:\Projetos\rotinas winthor\Markup Laborsil\obj\Debug\Markup Laborsil.pdb
+C:\Projetos\rotinas winthor\Markup Laborsil\obj\Debug\Markup Laborsil.exe.config
+C:\Projetos\rotinas winthor\Markup Laborsil\obj\Debug\Markup_Laborsil.FormCadastroMkp.resources
+C:\Projetos\rotinas winthor\Markup Laborsil\obj\Debug\Markup_Laborsil.FormConfig.resources
+C:\Projetos\rotinas winthor\Markup Laborsil\obj\Debug\Markup_Laborsil.FormLog.resources
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\System.Buffers.dll
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\System.Memory.dll
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\System.Numerics.Vectors.dll
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\System.Text.Encodings.Web.dll
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\System.Text.Json.dll
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\System.ValueTuple.dll
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\System.Buffers.xml
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\System.Memory.xml
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\System.Numerics.Vectors.xml
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\System.Text.Encodings.Web.xml
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\System.Text.Json.xml
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\System.ValueTuple.xml
+C:\Projetos\rotinas-wint\Markup Laborsil\bin\Debug\Markup Laborsil.exe.config
+C:\Projetos\rotinas-wint\Markup Laborsil\bin\Debug\Markup Laborsil.exe
+C:\Projetos\rotinas-wint\Markup Laborsil\bin\Debug\Markup Laborsil.pdb
+C:\Projetos\rotinas-wint\Markup Laborsil\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Projetos\rotinas-wint\Markup Laborsil\bin\Debug\System.Buffers.xml
+C:\Projetos\rotinas-wint\Markup Laborsil\bin\Debug\System.Memory.xml
+C:\Projetos\rotinas-wint\Markup Laborsil\bin\Debug\System.Numerics.Vectors.xml
+C:\Projetos\rotinas-wint\Markup Laborsil\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Projetos\rotinas-wint\Markup Laborsil\bin\Debug\System.Text.Encodings.Web.xml
+C:\Projetos\rotinas-wint\Markup Laborsil\bin\Debug\System.Text.Json.xml
+C:\Projetos\rotinas-wint\Markup Laborsil\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Projetos\rotinas-wint\Markup Laborsil\bin\Debug\System.ValueTuple.xml
+C:\Projetos\rotinas-wint\Markup Laborsil\obj\Debug\Markup Laborsil.csproj.AssemblyReference.cache
+C:\Projetos\rotinas-wint\Markup Laborsil\obj\Debug\Markup_Laborsil.Form1.resources
+C:\Projetos\rotinas-wint\Markup Laborsil\obj\Debug\Markup_Laborsil.FormCadastroMkp.resources
+C:\Projetos\rotinas-wint\Markup Laborsil\obj\Debug\Markup_Laborsil.FormConfig.resources
+C:\Projetos\rotinas-wint\Markup Laborsil\obj\Debug\Markup_Laborsil.FormLog.resources
+C:\Projetos\rotinas-wint\Markup Laborsil\obj\Debug\Markup_Laborsil.Properties.Resources.resources
+C:\Projetos\rotinas-wint\Markup Laborsil\obj\Debug\Markup Laborsil.csproj.GenerateResource.cache
+C:\Projetos\rotinas-wint\Markup Laborsil\obj\Debug\Markup Laborsil.csproj.CoreCompileInputs.cache
+C:\Projetos\rotinas-wint\Markup Laborsil\obj\Debug\Markup L.3AD8CB93.Up2Date
+C:\Projetos\rotinas-wint\Markup Laborsil\obj\Debug\Markup Laborsil.exe
+C:\Projetos\rotinas-wint\Markup Laborsil\obj\Debug\Markup Laborsil.pdb
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\ClosedXML.dll
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\ClosedXML.Parser.dll
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\DocumentFormat.OpenXml.Framework.dll
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\ExcelNumberFormat.dll
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\Microsoft.Bcl.HashCode.dll
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\RBush.dll
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\SixLabors.Fonts.dll
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\ClosedXML.pdb
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\ClosedXML.xml
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\ClosedXML.Parser.xml
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\DocumentFormat.OpenXml.Framework.xml
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\ExcelNumberFormat.xml
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\Microsoft.Bcl.HashCode.xml
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\RBush.xml
+C:\Projetos\rotinas winthor\Markup Laborsil\bin\Debug\SixLabors.Fonts.xml
+C:\Projetos\rotinas winthor\Markup Laborsil\obj\Debug\Markup_Laborsil.FiltroProdLog.resources
+C:\Projetos\rotinas winthor\Markup Laborsil\obj\Debug\Markup_Laborsil.FiltroMarcaLog.resources
+C:\Projetos\rotinas winthor\Markup Laborsil\obj\Debug\Markup_Laborsil.FiltroPromoLog.resources
+C:\Projetos\rotinas-wint\Markup Laborsil\bin\Debug\ClosedXML.xml
+C:\Projetos\rotinas-wint\Markup Laborsil\bin\Debug\ClosedXML.Parser.xml
+C:\Projetos\rotinas-wint\Markup Laborsil\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Projetos\rotinas-wint\Markup Laborsil\bin\Debug\DocumentFormat.OpenXml.Framework.xml
+C:\Projetos\rotinas-wint\Markup Laborsil\bin\Debug\ExcelNumberFormat.xml
+C:\Projetos\rotinas-wint\Markup Laborsil\bin\Debug\Microsoft.Bcl.HashCode.xml
+C:\Projetos\rotinas-wint\Markup Laborsil\bin\Debug\RBush.xml
+C:\Projetos\rotinas-wint\Markup Laborsil\bin\Debug\SixLabors.Fonts.xml
+C:\Projetos\rotinas-wint\Markup Laborsil\obj\Debug\Markup_Laborsil.FiltroMarcaLog.resources
+C:\Projetos\rotinas-wint\Markup Laborsil\obj\Debug\Markup_Laborsil.FiltroProdLog.resources
+C:\Projetos\rotinas-wint\Markup Laborsil\obj\Debug\Markup_Laborsil.FiltroPromoLog.resources
+C:\Projetos\rotinas-wint\Markup Laborsil\obj\Debug\Markup_Laborsil.FormConfigMarca.resources
+C:\Projetos\rotinas-wint\Markup Laborsil\obj\Debug\Markup_Laborsil.FormConfigProd.resources
+C:\Projetos\rotinas-wint\Markup Laborsil\obj\Debug\Markup Laborsil.csproj.Fody.CopyLocal.cache
+C:\Projetos\rotinas-wint\Markup Laborsil\obj\Debug\Markup Laborsil.csproj.Fody.RuntimeCopyLocal.cache

@@ -1,0 +1,91 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Projetos\\rotinas wint\\rotinas-wint\\Markup Laborsil\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D68694F6-176A-4633-BC44-C8EE170AECA0}|Markup Laborsil.csproj|C:\\Projetos\\rotinas wint\\rotinas-wint\\Markup Laborsil\\formcadmkptabpreco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D68694F6-176A-4633-BC44-C8EE170AECA0}|Markup Laborsil.csproj|solutionrelative:formcadmkptabpreco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D68694F6-176A-4633-BC44-C8EE170AECA0}|Markup Laborsil.csproj|c:\\projetos\\rotinas wint\\rotinas-wint\\markup laborsil\\dao\\mkppromocaodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D68694F6-176A-4633-BC44-C8EE170AECA0}|Markup Laborsil.csproj|solutionrelative:dao\\mkppromocaodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D68694F6-176A-4633-BC44-C8EE170AECA0}|Markup Laborsil.csproj|c:\\projetos\\rotinas wint\\rotinas-wint\\markup laborsil\\model\\mkppromocao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D68694F6-176A-4633-BC44-C8EE170AECA0}|Markup Laborsil.csproj|solutionrelative:model\\mkppromocao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D68694F6-176A-4633-BC44-C8EE170AECA0}|Markup Laborsil.csproj|C:\\Projetos\\rotinas wint\\rotinas-wint\\Markup Laborsil\\formcadmkptabpreco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D68694F6-176A-4633-BC44-C8EE170AECA0}|Markup Laborsil.csproj|solutionrelative:formcadmkptabpreco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MkpPromocao.cs",
+              "DocumentMoniker": "C:\\Projetos\\rotinas wint\\rotinas-wint\\Markup Laborsil\\Model\\MkpPromocao.cs",
+              "RelativeDocumentMoniker": "Model\\MkpPromocao.cs",
+              "ToolTip": "C:\\Projetos\\rotinas wint\\rotinas-wint\\Markup Laborsil\\Model\\MkpPromocao.cs",
+              "RelativeToolTip": "Model\\MkpPromocao.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-10T23:55:52.231Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MkpPromocaoDAO.cs",
+              "DocumentMoniker": "C:\\Projetos\\rotinas wint\\rotinas-wint\\Markup Laborsil\\DAO\\MkpPromocaoDAO.cs",
+              "RelativeDocumentMoniker": "DAO\\MkpPromocaoDAO.cs",
+              "ToolTip": "C:\\Projetos\\rotinas wint\\rotinas-wint\\Markup Laborsil\\DAO\\MkpPromocaoDAO.cs",
+              "RelativeToolTip": "DAO\\MkpPromocaoDAO.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAAC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-10T15:52:38.595Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FormCadMkpTabPreco.cs",
+              "DocumentMoniker": "C:\\Projetos\\rotinas wint\\rotinas-wint\\Markup Laborsil\\FormCadMkpTabPreco.cs",
+              "RelativeDocumentMoniker": "FormCadMkpTabPreco.cs",
+              "ToolTip": "C:\\Projetos\\rotinas wint\\rotinas-wint\\Markup Laborsil\\FormCadMkpTabPreco.cs",
+              "RelativeToolTip": "FormCadMkpTabPreco.cs",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAgwIsAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-15T16:44:58.261Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FormCadMkpTabPreco.cs [Design]",
+              "DocumentMoniker": "C:\\Projetos\\rotinas wint\\rotinas-wint\\Markup Laborsil\\FormCadMkpTabPreco.cs",
+              "RelativeDocumentMoniker": "FormCadMkpTabPreco.cs",
+              "ToolTip": "C:\\Projetos\\rotinas wint\\rotinas-wint\\Markup Laborsil\\FormCadMkpTabPreco.cs [Design]",
+              "RelativeToolTip": "FormCadMkpTabPreco.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-15T16:44:55.096Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
