@@ -139,7 +139,44 @@ namespace Markup_Laborsil
                 ReadOnly = false // Somente leitura
             });
 
+            metroGrid1.CellValueChanged += MetroGrid1_CellValueChanged;
+            metroGrid1.CurrentCellDirtyStateChanged += MetroGrid1_CurrentCellDirtyStateChanged;
 
+        }
+
+        private void MetroGrid1_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+            // Força o commit da mudança imediatamente para ComboBox
+            if (metroGrid1.IsCurrentCellDirty)
+            {
+                metroGrid1.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            }
+        }
+
+        private void MetroGrid1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verifica se a célula editada é uma das colunas editáveis
+            if (e.RowIndex >= 0 && (metroGrid1.Columns[e.ColumnIndex].Name == "atualizaAuto" ||
+                                   metroGrid1.Columns[e.ColumnIndex].Name == "tipoAtuPreco" ||
+                                   metroGrid1.Columns[e.ColumnIndex].Name == "percMkp"))
+            {
+                // Marca a linha como modificada alterando a cor de fundo
+                MarcarLinhaComoModificada(e.RowIndex);
+            }
+        }
+
+        private void MarcarLinhaComoModificada(int rowIndex)
+        {
+            if (rowIndex >= 0 && rowIndex < metroGrid1.Rows.Count)
+            {
+                DataGridViewRow row = metroGrid1.Rows[rowIndex];
+
+                // Altera a cor de fundo de todas as células da linha
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    cell.Style.BackColor = Color.MistyRose;
+                }
+            }
         }
 
         private void metroButton2_Click(object sender, EventArgs e)
@@ -206,30 +243,7 @@ namespace Markup_Laborsil
             CarregarDadosNoMetroListView();
         }
 
-        private void txbCodprod_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab)
-            {
-                if (int.TryParse(txbCodprod.Text, out int codProd))
-                {
-                    var dao = new ProdutoDAO();
-                    var produtos = dao.getProdutos(codProd, null);
-
-                    if (produtos != null)
-                    {
-                        metroTextBox3.Text = produtos[1].descricao;
-                    }
-                    else
-                    {
-                        metroTextBox3.Text = "";
-                        MetroFramework.MetroMessageBox.Show(this, "Produto não encontrado.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        txbCodprod.Text = "";
-                    }
-                }
-            }
-        }
-
-        public void txbCodprod_Leave(object sender, EventArgs e)
+        private void ValidarEPreencherProduto()
         {
             if (int.TryParse(txbCodprod.Text, out int codProd))
             {
@@ -245,6 +259,7 @@ namespace Markup_Laborsil
                     metroTextBox3.Text = "";
                     MetroFramework.MetroMessageBox.Show(this, "Produto não encontrado.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txbCodprod.Text = "";
+                    txbCodprod.Focus();
                 }
             }
             else
@@ -253,35 +268,26 @@ namespace Markup_Laborsil
             }
         }
 
-        private void txbMarca_KeyDown(object sender, KeyEventArgs e)
+        private void txbCodprod_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab)
             {
-                if (int.TryParse(txbMarca.Text, out int codMarca))
-                {
-                    var dao = new MarcaDAO();
-                    var marca = dao.obterMarcas(codMarca, null);
-
-                    if (marca != null)
-                    {
-                        metroTextBox4.Text = marca[0].descMarca;
-                    }
-                    else
-                    {
-                        metroTextBox4.Text = "";
-                        MetroFramework.MetroMessageBox.Show(this, "Marca não encontrada.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        txbMarca.Text = "";
-                    }
-                }
+                ValidarEPreencherProduto();
+                e.SuppressKeyPress = true;
             }
         }
 
-        public void txbMarca_Leave(object sender, EventArgs e)
+        public void txbCodprod_Leave(object sender, EventArgs e)
+        {
+            ValidarEPreencherProduto();
+        }
+
+        private void ValidarEPreencherMarca()
         {
             if (int.TryParse(txbMarca.Text, out int codMarca))
             {
                 var dao = new MarcaDAO();
-                var marca = dao.obterMarcas(codMarca, null);
+                var marca = dao.obterMarcas(codMarca, null, null, null);
 
                 if (marca != null && marca.Count > 0)
                 {
@@ -296,8 +302,23 @@ namespace Markup_Laborsil
             }
             else
             {
+                // Limpa o campo de descrição se o código digitado não for um número válido
                 metroTextBox4.Text = "";
             }
+        }
+
+        private void txbMarca_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab)
+            {
+                ValidarEPreencherMarca();
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        public void txbMarca_Leave(object sender, EventArgs e)
+        {
+            ValidarEPreencherMarca();
         }
 
         private void btExportExcel_Click(object sender, EventArgs e)
@@ -459,7 +480,7 @@ namespace Markup_Laborsil
             // Verifica se há linhas alteradas
             bool temAlteracoes = metroGrid1.Rows
                 .Cast<DataGridViewRow>()
-                .Any(r => !r.IsNewRow && r.DefaultCellStyle.BackColor == Color.MistyRose);
+                .Any(r => !r.IsNewRow && r.Cells.Cast<DataGridViewCell>().Any(c => c.Style.BackColor == Color.MistyRose));
 
             if (!temAlteracoes)
             {
@@ -471,7 +492,7 @@ namespace Markup_Laborsil
             {
                 if (row.IsNewRow) continue;
 
-                if (row.DefaultCellStyle.BackColor == Color.MistyRose)
+                if (row.Cells.Cast<DataGridViewCell>().Any(c => c.Style.BackColor == Color.MistyRose))
                 {
                     string codProdStr = row.Cells["codProd"].Value?.ToString();
                     string atualizaAutoStr = row.Cells["atualizaAuto"].Value?.ToString();

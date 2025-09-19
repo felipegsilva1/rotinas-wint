@@ -10,7 +10,7 @@ namespace Markup_Laborsil.DAO
 {
     public class MarcaDAO
     {
-        public List<Marca> obterMarcas(int? codMarca, string descMarca)
+        public List<Marca> obterMarcas(int? codMarca, string descMarca, string atuAuto, string tipoAtu)
         {
             List<Marca> marcas = new List<Marca>();
             StringBuilder sql = new StringBuilder();
@@ -23,6 +23,14 @@ namespace Markup_Laborsil.DAO
             if (!string.IsNullOrEmpty(descMarca))
             {
                 sql.Append(" AND UPPER(marca) LIKE UPPER(:pdescMarca) ");
+            }
+            if (!string.IsNullOrEmpty(atuAuto))
+            {
+                sql.Append(" AND NVL(Ad_Atuautomatico, 'N') = :atuAuto ");
+            }
+            if (!string.IsNullOrEmpty(tipoAtu))
+            {
+                sql.Append(" AND Ad_Tipoatupreco = :tipoAtu ");
             }
 
             sql.Append(" AND ATIVO = 'S' ORDER BY MARCA ");
@@ -38,6 +46,14 @@ namespace Markup_Laborsil.DAO
                     if (!string.IsNullOrEmpty(descMarca))
                     {
                         command.Parameters.Add("pdescMarca", OracleDbType.Varchar2).Value = "%" + descMarca + "%";
+                    }
+                    if (!string.IsNullOrEmpty(atuAuto))
+                    {
+                        command.Parameters.Add("atuAuto", OracleDbType.Varchar2).Value = atuAuto;
+                    }
+                    if (!string.IsNullOrEmpty(tipoAtu))
+                    {
+                        command.Parameters.Add("tipoAtu", OracleDbType.Varchar2).Value = tipoAtu;
                     }
 
                     {

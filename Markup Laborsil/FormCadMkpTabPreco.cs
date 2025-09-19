@@ -1,4 +1,5 @@
-﻿using DocumentFormat.OpenXml.Wordprocessing;
+﻿using ClosedXML.Excel;
+using DocumentFormat.OpenXml.Wordprocessing;
 using Markup_Laborsil.DAO;
 using Markup_Laborsil.Model;
 using System;
@@ -6,11 +7,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ClosedXML.Excel;
+using ExcelDataReader;
 
 namespace Markup_Laborsil
 {
@@ -34,8 +36,6 @@ namespace Markup_Laborsil
             metroTextBox3.UseCustomBackColor = true;
             metroTextBox4.UseCustomBackColor = true;
             metroTextBox5.UseCustomBackColor = true;
-
-            BtAllTipoAtu.Checked = true;
             CheckBtnUpdate.Checked = true;
             CheckBtnExcluirTudo.Checked = false;
         }
@@ -48,9 +48,9 @@ namespace Markup_Laborsil
         private void btPrevios_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormCadastroMkp formCadMkp = new FormCadastroMkp();
-            formCadMkp.FormClosed += (s, args) => this.Close();
-            formCadMkp.Show();
+            Form1 formPrincipal = new Form1();
+            formPrincipal.FormClosed += (s, args) => this.Close();
+            formPrincipal.Show();
         }
 
         private void ConfigurarMetroGrid1_AbaPrincipal()
@@ -203,30 +203,7 @@ namespace Markup_Laborsil
             CarregarDadosMetroGrid1_AbaPrincipal();
         }
 
-        private void txbCodprod_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab)
-            {
-                if (int.TryParse(txbCodprod.Text, out int codProd))
-                {
-                    var dao = new ProdutoDAO();
-                    var produtos = dao.getProdutos(codProd, null);
-
-                    if (produtos != null)
-                    {
-                        metroTextBox3.Text = produtos[1].descricao;
-                    }
-                    else
-                    {
-                        metroTextBox3.Text = "";
-                        MetroFramework.MetroMessageBox.Show(this, "Produto não encontrado.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        txbCodprod.Text = "";
-                    }
-                }
-            }
-        }
-
-        public void txbCodprod_Leave(object sender, EventArgs e)
+        private void ValidarEPreencherProduto()
         {
             if (int.TryParse(txbCodprod.Text, out int codProd))
             {
@@ -242,6 +219,7 @@ namespace Markup_Laborsil
                     metroTextBox3.Text = "";
                     MetroFramework.MetroMessageBox.Show(this, "Produto não encontrado.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txbCodprod.Text = "";
+                    txbCodprod.Focus();
                 }
             }
             else
@@ -250,35 +228,26 @@ namespace Markup_Laborsil
             }
         }
 
-        private void txbMarca_KeyDown(object sender, KeyEventArgs e)
+        private void txbCodprod_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab)
             {
-                if (int.TryParse(txbMarca.Text, out int codMarca))
-                {
-                    var dao = new MarcaDAO();
-                    var marca = dao.obterMarcas(codMarca, null);
-
-                    if (marca != null)
-                    {
-                        metroTextBox4.Text = marca[0].descMarca;
-                    }
-                    else
-                    {
-                        metroTextBox4.Text = "";
-                        MetroFramework.MetroMessageBox.Show(this, "Marca não encontrada.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        txbMarca.Text = "";
-                    }
-                }
+                ValidarEPreencherProduto();
+                e.SuppressKeyPress = true;
             }
         }
 
-        public void txbMarca_Leave(object sender, EventArgs e)
+        public void txbCodprod_Leave(object sender, EventArgs e)
+        {
+            ValidarEPreencherProduto();
+        }
+
+        private void ValidarEPreencherMarca()
         {
             if (int.TryParse(txbMarca.Text, out int codMarca))
             {
                 var dao = new MarcaDAO();
-                var marca = dao.obterMarcas(codMarca, null);
+                var marca = dao.obterMarcas(codMarca, null, null, null);
 
                 if (marca != null && marca.Count > 0)
                 {
@@ -293,7 +262,47 @@ namespace Markup_Laborsil
             }
             else
             {
+                // Limpa o campo de descrição se o código digitado não for um número válido
                 metroTextBox4.Text = "";
+            }
+        }
+
+        private void txbMarca_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab)
+            {
+                ValidarEPreencherMarca();
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        public void txbMarca_Leave(object sender, EventArgs e)
+        {
+            ValidarEPreencherMarca();
+        }
+
+        private void ValidarEPreencherPromocao()
+        {
+            if (int.TryParse(txbPromocao.Text, out int codPromo))
+            {
+                var dao = new CabPromocaoDAO();
+                var promocoes = dao.ObterCabecalhoPromocoes(codPromo, null);
+
+                if (promocoes != null && promocoes.Count > 0)
+                {
+                    metroTextBox5.Text = promocoes[0].descPromocao;
+                }
+                else
+                {
+                    metroTextBox5.Text = "";
+                    MetroFramework.MetroMessageBox.Show(this, "Promoção não encontrada.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txbPromocao.Text = "";
+                    txbPromocao.Focus();
+                }
+            }
+            else
+            {
+                metroTextBox5.Text = "";
             }
         }
 
@@ -301,47 +310,14 @@ namespace Markup_Laborsil
         {
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab)
             {
-                if (int.TryParse(txbPromocao.Text, out int codPromo))
-                {
-                    var dao = new CabPromocaoDAO();
-                    var promo = dao.ObterCabecalhoPromocoes(codPromo, null);
-
-                    if (promo != null)
-                    {
-                        metroTextBox5.Text = promo[0].descPromocao;
-                    }
-                    else
-                    {
-                        metroTextBox5.Text = "";
-                        MetroFramework.MetroMessageBox.Show(this, "Promoção não encontrada.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        txbPromocao.Text = "";
-                    }
-                }
+                ValidarEPreencherPromocao();
+                e.SuppressKeyPress = true;
             }
         }
 
         public void txbPromocao_Leave(object sender, EventArgs e)
         {
-            if (int.TryParse(txbPromocao.Text, out int codPromo))
-            {
-                var dao = new CabPromocaoDAO();
-                var promo = dao.ObterCabecalhoPromocoes(codPromo, null);
-
-                if (promo != null && promo.Count > 0)
-                {
-                    metroTextBox5.Text = promo[0].descPromocao;
-                }
-                else
-                {
-                    metroTextBox5.Text = "";
-                    MetroFramework.MetroMessageBox.Show(this, "Promoção não encontrada.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txbPromocao.Text = "";
-                }
-            }
-            else
-            {
-                metroTextBox5.Text = "";
-            }
+            ValidarEPreencherPromocao();
         }
 
         private void btFiltroProd_Click(object sender, EventArgs e)
@@ -547,61 +523,104 @@ namespace Markup_Laborsil
             }
         }
 
-        private void BtnImportar_Click(object sender, EventArgs e)
+        public void BtnImportar_Click(object sender, EventArgs e)
         {
             var openFileDialog = new OpenFileDialog
             {
-                Filter = "Arquivos Excel (*.xlsx)|*.xlsx",
+                Filter = "Arquivos Suportados (*.xlsx;*.xls;*.csv)|*.xlsx;*.xls;*.csv|" +
+                "Arquivos Excel (*.xlsx;*.xls)|*.xlsx;*.xls|" +
+                "Arquivos CSV (*.csv)|*.csv",
                 Title = "Selecione o arquivo de layout"
             };
 
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                dadosImportados.Clear();
-                using (var workbook = new XLWorkbook(openFileDialog.FileName))
-                {
-                    var worksheet = workbook.Worksheet(1);
-                    var rows = worksheet.RowsUsed().Skip(1);
+            if (openFileDialog.ShowDialog() != DialogResult.OK)
+                return;
 
-                    foreach (var row in rows)
+            dadosImportados.Clear();
+
+            // Obtém a extensão do arquivo para decidir como lê-lo
+            string extensao = Path.GetExtension(openFileDialog.FileName).ToLower();
+
+            if (extensao == ".xls" || extensao == ".xlsx")
+            {
+                // --- LÓGICA ORIGINAL PARA LER ARQUIVOS EXCEL ---
+                using (var stream = File.Open(openFileDialog.FileName, FileMode.Open, FileAccess.Read))
+                using (var reader = ExcelReaderFactory.CreateReader(stream))
+                {
+                    var result = reader.AsDataSet(new ExcelDataSetConfiguration()
+                    {
+                        ConfigureDataTable = (_) => new ExcelDataTableConfiguration() { UseHeaderRow = true }
+                    });
+
+                    var table = result.Tables[0]; // primeira aba
+
+                    foreach (DataRow row in table.Rows)
                     {
                         dadosImportados.Add(new MkpPromocao
                         {
-                            codProd = row.Cell(1).GetValue<int>(),
-                            codPromocao = row.Cell(2).GetValue<int>(),
-                            permkp = row.Cell(3).GetValue<decimal>()
+                            codProd = Convert.ToInt32(row[0]),
+                            codPromocao = Convert.ToInt32(row[1]),
+                            permkp = Convert.ToDecimal(row[2])
                         });
                     }
                 }
-
-                CabPromocaoDAO promocaoDAO = new CabPromocaoDAO();
-                List<CabPromocao> promocao = promocaoDAO.ObterCabecalhoPromocoes(null, null);
-                Dictionary<int?, CabPromocao> marcaLookup = promocao.ToDictionary(p => p.codPromocao);
-
-                var promocoes = dadosImportados
-                    .Select(p => p.codPromocao)
-                    .Distinct()
-                    .Select(p => {
-                        CabPromocao cabpromocao;
-                        marcaLookup.TryGetValue(Convert.ToInt32(p), out cabpromocao);
-
-                        string descricao = cabpromocao != null ? cabpromocao.descPromocao : "Descrição não encontrada";
-
-                        return new
-                        {
-                            CodPromocao = p,        // Do seu MkpPromocao
-                            Descricao = descricao,  // Do CabPromocao
-                        };
-                    })
-                    .ToList();
-
-                metroGrid2.DataSource = promocoes;
             }
+            else if (extensao == ".csv")
+            {
+                // --- NOVA LÓGICA PARA LER ARQUIVOS CSV ---
+                var linhas = File.ReadAllLines(openFileDialog.FileName).Skip(1); // Pula o cabeçalho
+                foreach (var linha in linhas)
+                {
+                    // O separador pode ser ',' ou ';', ajuste conforme sua necessidade
+                    string[] colunas = linha.Split(';');
+
+                    if (colunas.Length >= 3) // Garante que a linha tem dados suficientes
+                    {
+                        dadosImportados.Add(new MkpPromocao
+                        {
+                            codProd = Convert.ToInt32(colunas[0]),
+                            codPromocao = Convert.ToInt32(colunas[1]),
+                            permkp = Convert.ToDecimal(colunas[2])
+                        });
+                    }
+                }
+            }
+
+            // Pré-carregar promoções
+            CabPromocaoDAO promocaoDAO = new CabPromocaoDAO();
+            List<CabPromocao> promocao = promocaoDAO.ObterCabecalhoPromocoes(null, null);
+            Dictionary<int?, CabPromocao> promoLookup = promocao.ToDictionary(p => p.codPromocao);
+
+            var promocoes = dadosImportados
+                .Select(p => p.codPromocao)
+                .Distinct()
+                .Select(p =>
+                {
+                    promoLookup.TryGetValue(p, out CabPromocao cabpromocao);
+                    string descricao = cabpromocao != null ? cabpromocao.descPromocao : "Descrição não encontrada";
+
+                    return new
+                    {
+                        CodPromocao = p,
+                        Descricao = descricao
+                    };
+                })
+                .ToList();
+
+            metroGrid2.DataSource = promocoes;
         }
 
         private void metroGrid2_SelectionChanged(object sender, EventArgs e)
         {
             this.metroGrid2.SelectionChanged -= metroGrid2_SelectionChanged;
+
+            ProdutoDAO produtoDao = new ProdutoDAO();
+            List<Produto> todosProdutos = produtoDao.getProdutosMkp(null, null, null, null, null);
+            Dictionary<int, Produto> produtosLookup = todosProdutos.ToDictionary(p => p.codProd);
+
+            MarcaDAO marcaDao = new MarcaDAO();
+            List<Marca> todasMarcas = marcaDao.obterMarcas(null, null, null, null);
+            Dictionary<int, Marca> marcasLookup = todasMarcas.ToDictionary(m => m.CodMarca);
 
             try
             {
@@ -612,47 +631,48 @@ namespace Markup_Laborsil
                 }
 
                 var selectedRow = metroGrid2.SelectedRows[0];
-
                 if (selectedRow.Cells["codPromo"].Value == null)
-                {
                     return;
-                }
 
                 int codPromocaoSelecionada = Convert.ToInt32(selectedRow.Cells["codPromo"].Value);
 
-
-                ProdutoDAO produtoDao = new ProdutoDAO();
-                MarcaDAO marcaDao = new MarcaDAO();
-
-                List<Produto> todosProdutos = produtoDao.getProdutosMkp(null, null, null, null, null);
-                Dictionary<int, Produto> produtosLookup = todosProdutos.ToDictionary(p => p.codProd);
-
-                var produtosDaPromocao = dadosImportados
-                    .Where(p => p.codPromocao == codPromocaoSelecionada)
-                    .Select(p => {
-                        Produto produtoDetalhes;
-                        produtosLookup.TryGetValue(Convert.ToInt32(p.codProd), out produtoDetalhes);
-
-                        string descricao = produtoDetalhes != null ? produtoDetalhes.descricao : "Descrição não encontrada";
-                        string descricaoMarca = null;
-
-                        if (produtoDetalhes != null)
+                // Filtrar dadosImportados para a promoção selecionada
+                var produtosDaPromocao = (dadosImportados ?? new List<MkpPromocao>())
+                    .Where(p => p != null && p.codPromocao == codPromocaoSelecionada)
+                    .Select(p =>
+                    {
+                        Produto produtoDetalhes = null;
+                        if (p.codProd != null)
                         {
-                            List<Marca> marcasEncontradas = marcaDao.obterMarcas(produtoDetalhes.codMarca, null);
-                            descricaoMarca = marcasEncontradas.Count > 0 ? marcasEncontradas[0].descMarca : "Marca não encontrada";
+                            produtosLookup.TryGetValue(p.codProd, out produtoDetalhes);
                         }
+
+                        string descricao = produtoDetalhes?.descricao ?? "Descrição não encontrada";
+
+                        string descricaoMarca = "Marca não encontrada";
+                        if (produtoDetalhes != null && produtoDetalhes.codMarca.HasValue && marcasLookup != null)
+                        {
+                            marcasLookup.TryGetValue(produtoDetalhes.codMarca.Value, out Marca marcaObj);
+                            descricaoMarca = marcaObj != null ? marcaObj.descMarca : "Marca não encontrada";
+                        }
+
 
                         return new
                         {
-                            CodProd = p.codProd,               // Do seu MkpPromocao
-                            Descricao = descricao,            // Do ProdutoDAO
-                            Marca = descricaoMarca,          // Do ProdutoDAO
-                            PercMkp = p.permkp              // Do seu MkpPromocao
+                            CodProd = p.codProd,
+                            Descricao = descricao,
+                            Marca = descricaoMarca,
+                            PercMkp = p.permkp
                         };
                     })
                     .ToList();
 
-                metroGrid3.DataSource = produtosDaPromocao;
+                // Paginação simples: exibir apenas 100 linhas por vez
+                int pagina = 0; // você pode adicionar variável de página
+                int tamanhoPagina = 100;
+                var produtosPagina = produtosDaPromocao.Skip(pagina * tamanhoPagina).Take(tamanhoPagina).ToList();
+
+                metroGrid3.DataSource = produtosPagina;
             }
             finally
             {
@@ -670,7 +690,7 @@ namespace Markup_Laborsil
             Dictionary<int, Produto> produtosLookup = todosProdutos.ToDictionary(p => p.codProd);
 
             MarcaDAO marcaDao = new MarcaDAO();
-            List<Marca> todasMarcas = marcaDao.obterMarcas(null, null);
+            List<Marca> todasMarcas = marcaDao.obterMarcas(null, null, null, null);
             Dictionary<int, Marca> marcasLookup = todasMarcas.ToDictionary(m => m.CodMarca);
 
             CabPromocaoDAO cabPromocaoDao = new CabPromocaoDAO();
@@ -802,6 +822,17 @@ namespace Markup_Laborsil
             {
                 TabControle.SelectedTab = TabControle.TabPages["Lista"];
             }
+        }
+
+        private void BtnLimparFiltro_Click(object sender, EventArgs e)
+        {
+            txbCodprod.Text = string.Empty;
+            txbMarca.Text = string.Empty;
+            txbPromocao.Text = string.Empty;
+            metroTextBox3.Text = string.Empty;
+            metroTextBox4.Text = string.Empty;
+            metroTextBox5.Text = string.Empty;
+
         }
     }
 }

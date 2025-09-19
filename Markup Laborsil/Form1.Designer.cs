@@ -38,6 +38,7 @@
             this.metroRadioButton2 = new MetroFramework.Controls.MetroRadioButton();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
             this.CloseBtn = new MetroFramework.Controls.MetroButton();
+            this.btSobre = new MetroFramework.Controls.MetroButton();
             this.metroPanel1.SuspendLayout();
             this.metroPanel2.SuspendLayout();
             this.metroPanel3.SuspendLayout();
@@ -149,6 +150,7 @@
             // 
             // metroPanel3
             // 
+            this.metroPanel3.Controls.Add(this.btSobre);
             this.metroPanel3.Controls.Add(this.CloseBtn);
             this.metroPanel3.Controls.Add(this.NextBtn);
             this.metroPanel3.HorizontalScrollbarBarColor = true;
@@ -172,6 +174,17 @@
             this.CloseBtn.Text = "Sair";
             this.CloseBtn.UseSelectable = true;
             this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
+            // 
+            // btSobre
+            // 
+            this.btSobre.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btSobre.Location = new System.Drawing.Point(3, 3);
+            this.btSobre.Name = "btSobre";
+            this.btSobre.Size = new System.Drawing.Size(97, 27);
+            this.btSobre.TabIndex = 3;
+            this.btSobre.Text = "Sobre";
+            this.btSobre.UseSelectable = true;
+            this.btSobre.Click += new System.EventHandler(this.btSobre_Click);
             // 
             // Form1
             // 
@@ -205,6 +218,7 @@
         private MetroFramework.Controls.MetroRadioButton metroRadioButton2;
         private MetroFramework.Controls.MetroRadioButton metroRadioButton3;
         private MetroFramework.Controls.MetroButton CloseBtn;
+        private MetroFramework.Controls.MetroButton btSobre;
     }
 }
 

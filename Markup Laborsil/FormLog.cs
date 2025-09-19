@@ -268,30 +268,7 @@ namespace Markup_Laborsil
 
         }
 
-        private void txbCodprod_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab)
-            {
-                if (int.TryParse(txbCodprod.Text, out int codProd))
-                {
-                    var dao = new ProdutoDAO();
-                    var produtos = dao.getProdutos(codProd, null);
-
-                    if (produtos != null)
-                    {
-                        metroTextBox3.Text = produtos[1].descricao;
-                    }
-                    else
-                    {
-                        metroTextBox3.Text = "";
-                        MetroFramework.MetroMessageBox.Show(this, "Produto não encontrado.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        txbCodprod.Text = "";
-                    }
-                }
-            }
-        }
-
-        public void txbCodprod_Leave(object sender, EventArgs e)
+        private void ValidarEPreencherProduto()
         {
             if (int.TryParse(txbCodprod.Text, out int codProd))
             {
@@ -307,6 +284,7 @@ namespace Markup_Laborsil
                     metroTextBox3.Text = "";
                     MetroFramework.MetroMessageBox.Show(this, "Produto não encontrado.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txbCodprod.Text = "";
+                    txbCodprod.Focus();
                 }
             }
             else
@@ -315,35 +293,26 @@ namespace Markup_Laborsil
             }
         }
 
-        private void txbMarca_KeyDown(object sender, KeyEventArgs e)
+        private void txbCodprod_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab)
             {
-                if (int.TryParse(txbMarca.Text, out int codMarca))
-                {
-                    var dao = new MarcaDAO();
-                    var marca = dao.obterMarcas(codMarca, null);
-
-                    if (marca != null)
-                    {
-                        metroTextBox4.Text = marca[0].descMarca;
-                    }
-                    else
-                    {
-                        metroTextBox4.Text = "";
-                        MetroFramework.MetroMessageBox.Show(this, "Marca não encontrada.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        txbMarca.Text = "";
-                    }
-                }
+                ValidarEPreencherProduto();
+                e.SuppressKeyPress = true;
             }
         }
 
-        public void txbMarca_Leave(object sender, EventArgs e)
+        public void txbCodprod_Leave(object sender, EventArgs e)
+        {
+            ValidarEPreencherProduto();
+        }
+
+        private void ValidarEPreencherMarca()
         {
             if (int.TryParse(txbMarca.Text, out int codMarca))
             {
                 var dao = new MarcaDAO();
-                var marca = dao.obterMarcas(codMarca, null);
+                var marca = dao.obterMarcas(codMarca, null, null, null);
 
                 if (marca != null && marca.Count > 0)
                 {
@@ -358,55 +327,62 @@ namespace Markup_Laborsil
             }
             else
             {
+                // Limpa o campo de descrição se o código digitado não for um número válido
                 metroTextBox4.Text = "";
             }
         }
 
-        private void txbtxbPromocao_KeyDown(object sender, KeyEventArgs e)
+        private void txbMarca_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab)
             {
-                if (int.TryParse(txbPromocao.Text, out int codPromocao))
-                {
-                    var dao = new CabPromocaoDAO();
-                    var promocao = dao.ObterCabecalhoPromocoes(codPromocao, null);
-
-                    if (promocao != null && promocao.Count > 0)
-                    {
-                        metroTextBox5.Text = promocao[0].descPromocao;
-                    }
-                    else
-                    {
-                        metroTextBox5.Text = "";
-                        MetroFramework.MetroMessageBox.Show(this, "Promoção não encontrada.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        txbPromocao.Text = "";
-                    }
-                }
+                ValidarEPreencherMarca();
+                e.SuppressKeyPress = true;
             }
         }
 
-        public void txbPromocao_Leave(object sender, EventArgs e)
+        public void txbMarca_Leave(object sender, EventArgs e)
         {
-            if (int.TryParse(txbPromocao.Text, out int codPromocao))
+            ValidarEPreencherMarca();
+        }
+
+        private void ValidarEPreencherPromocao()
+        {
+            if (int.TryParse(txbPromocao.Text, out int codPromo))
             {
                 var dao = new CabPromocaoDAO();
-                var promocao = dao.ObterCabecalhoPromocoes(codPromocao, null);
+                var promocoes = dao.ObterCabecalhoPromocoes(codPromo, null);
 
-                if (promocao != null && promocao.Count > 0)
+                if (promocoes != null && promocoes.Count > 0)
                 {
-                    metroTextBox5.Text = promocao[0].descPromocao;
+                    metroTextBox5.Text = promocoes[0].descPromocao;
                 }
                 else
                 {
                     metroTextBox5.Text = "";
                     MetroFramework.MetroMessageBox.Show(this, "Promoção não encontrada.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txbPromocao.Text = "";
+                    txbPromocao.Focus();
                 }
             }
             else
             {
                 metroTextBox5.Text = "";
             }
+        }
+
+        private void txbPromocao_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab)
+            {
+                ValidarEPreencherPromocao();
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        public void txbPromocao_Leave(object sender, EventArgs e)
+        {
+            ValidarEPreencherPromocao();
         }
 
         private void exportExcel_Click(object sender, EventArgs e)

@@ -74,7 +74,7 @@ namespace Markup_Laborsil
             {
 
                 // Obtem os dados do banco
-                List<Marca> dados = dao.obterMarcas(CodMarca, descricao);
+                List<Marca> dados = dao.obterMarcas(CodMarca, descricao, null, null);
 
                 foreach (Marca item in dados)
                 {

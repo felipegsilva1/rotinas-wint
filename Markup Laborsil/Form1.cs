@@ -54,7 +54,7 @@ namespace Markup_Laborsil
             if (metroRadioButton3.Checked)
             {
                 this.Hide();
-                FormCadastroMkp formCadastroMkp = new FormCadastroMkp();
+                FormCadMkpTabPreco formCadastroMkp = new FormCadMkpTabPreco();
                 formCadastroMkp.FormClosed += (s, args) => this.Close();
                 formCadastroMkp.Show();
             }
@@ -72,6 +72,12 @@ namespace Markup_Laborsil
                 formLog.FormClosed += (s, args) => this.Close();
                 formLog.Show();
             }
+        }
+
+        private void btSobre_Click(object sender, EventArgs e)
+        {
+            FormSobre formSobre = new FormSobre();
+            formSobre.Show();
         }
     }
 }

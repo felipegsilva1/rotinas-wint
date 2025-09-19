@@ -10,8 +10,8 @@ namespace Markup_Laborsil
 {
     public class Conexao
     {
-        private static string _connectionString = "User Id=LABORSIL;Password=L4BO3SIL;Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=132.226.252.205)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=WINT)))";
-        //private static string _connectionString = "User Id=LABORSIL;Password=L4BO3SIL;Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.97.100)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=WINT)))";
+        //private static string _connectionString = "User Id=LABORSIL;Password=L4BO3SIL;Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=132.226.252.205)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=WINT)))";
+        private static string _connectionString = "User Id=LABORSIL;Password=L4BO3SIL;Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.97.100)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=WINT)))";
         //private static string _connectionString = $"User Id={Program.UsuarioBD};Password={Program.SenhaBD};Data Source={Program.AliasBD}";
 
 

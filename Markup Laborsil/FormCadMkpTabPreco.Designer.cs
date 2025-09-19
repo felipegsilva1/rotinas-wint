@@ -48,10 +48,6 @@
             this.txbPromocao = new MetroFramework.Controls.MetroTextBox();
             this.BtnLimparFiltro = new MetroFramework.Controls.MetroButton();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
-            this.BtAllTipoAtu = new MetroFramework.Controls.MetroRadioButton();
-            this.btMkpTabPreco = new MetroFramework.Controls.MetroRadioButton();
-            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
-            this.btMkpProd = new MetroFramework.Controls.MetroRadioButton();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.btFiltroProd = new MetroFramework.Controls.MetroButton();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
@@ -154,10 +150,6 @@
             this.Lista.Controls.Add(this.txbPromocao);
             this.Lista.Controls.Add(this.BtnLimparFiltro);
             this.Lista.Controls.Add(this.metroGrid1);
-            this.Lista.Controls.Add(this.BtAllTipoAtu);
-            this.Lista.Controls.Add(this.btMkpTabPreco);
-            this.Lista.Controls.Add(this.metroLabel6);
-            this.Lista.Controls.Add(this.btMkpProd);
             this.Lista.Controls.Add(this.metroButton2);
             this.Lista.Controls.Add(this.btFiltroProd);
             this.Lista.Controls.Add(this.metroLabel4);
@@ -269,12 +261,13 @@
             // BtnLimparFiltro
             // 
             this.BtnLimparFiltro.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.BtnLimparFiltro.Location = new System.Drawing.Point(683, 6);
+            this.BtnLimparFiltro.Location = new System.Drawing.Point(448, 6);
             this.BtnLimparFiltro.Name = "BtnLimparFiltro";
             this.BtnLimparFiltro.Size = new System.Drawing.Size(97, 27);
             this.BtnLimparFiltro.TabIndex = 63;
             this.BtnLimparFiltro.Text = "Limpar Filtro";
             this.BtnLimparFiltro.UseSelectable = true;
+            this.BtnLimparFiltro.Click += new System.EventHandler(this.BtnLimparFiltro_Click);
             // 
             // metroGrid1
             // 
@@ -319,46 +312,6 @@
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.metroGrid1.Size = new System.Drawing.Size(1187, 383);
             this.metroGrid1.TabIndex = 62;
-            // 
-            // BtAllTipoAtu
-            // 
-            this.BtAllTipoAtu.AutoSize = true;
-            this.BtAllTipoAtu.Location = new System.Drawing.Point(433, 70);
-            this.BtAllTipoAtu.Name = "BtAllTipoAtu";
-            this.BtAllTipoAtu.Size = new System.Drawing.Size(55, 15);
-            this.BtAllTipoAtu.TabIndex = 60;
-            this.BtAllTipoAtu.Text = "Todos";
-            this.BtAllTipoAtu.UseSelectable = true;
-            // 
-            // btMkpTabPreco
-            // 
-            this.btMkpTabPreco.AutoSize = true;
-            this.btMkpTabPreco.Location = new System.Drawing.Point(433, 49);
-            this.btMkpTabPreco.Name = "btMkpTabPreco";
-            this.btMkpTabPreco.Size = new System.Drawing.Size(189, 15);
-            this.btMkpTabPreco.TabIndex = 59;
-            this.btMkpTabPreco.Text = "Markup por Tabela de Preço (T)";
-            this.btMkpTabPreco.UseSelectable = true;
-            // 
-            // metroLabel6
-            // 
-            this.metroLabel6.AutoSize = true;
-            this.metroLabel6.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.metroLabel6.Location = new System.Drawing.Point(433, 6);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(106, 15);
-            this.metroLabel6.TabIndex = 58;
-            this.metroLabel6.Text = "Tipo de Atualização";
-            // 
-            // btMkpProd
-            // 
-            this.btMkpProd.AutoSize = true;
-            this.btMkpProd.Location = new System.Drawing.Point(433, 28);
-            this.btMkpProd.Name = "btMkpProd";
-            this.btMkpProd.Size = new System.Drawing.Size(149, 15);
-            this.btMkpProd.TabIndex = 57;
-            this.btMkpProd.Text = "Markup por Produto (P)";
-            this.btMkpProd.UseSelectable = true;
             // 
             // metroButton2
             // 
@@ -538,7 +491,7 @@
             // BtnPesquisar
             // 
             this.BtnPesquisar.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.BtnPesquisar.Location = new System.Drawing.Point(683, 60);
+            this.BtnPesquisar.Location = new System.Drawing.Point(448, 60);
             this.BtnPesquisar.Name = "BtnPesquisar";
             this.BtnPesquisar.Size = new System.Drawing.Size(97, 27);
             this.BtnPesquisar.TabIndex = 48;
@@ -698,7 +651,7 @@
             this.metroGrid3.EnableHeadersVisualStyles = false;
             this.metroGrid3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.metroGrid3.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid3.Location = new System.Drawing.Point(414, 113);
+            this.metroGrid3.Location = new System.Drawing.Point(401, 113);
             this.metroGrid3.Name = "metroGrid3";
             this.metroGrid3.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -711,7 +664,7 @@
             this.metroGrid3.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.metroGrid3.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid3.Size = new System.Drawing.Size(769, 383);
+            this.metroGrid3.Size = new System.Drawing.Size(782, 383);
             this.metroGrid3.TabIndex = 64;
             // 
             // metroGrid2
@@ -855,10 +808,6 @@
         private MetroFramework.Controls.MetroTabControl TabControle;
         private MetroFramework.Controls.MetroTabPage Lista;
         private MetroFramework.Controls.MetroTabPage Importad;
-        private MetroFramework.Controls.MetroRadioButton BtAllTipoAtu;
-        private MetroFramework.Controls.MetroRadioButton btMkpTabPreco;
-        private MetroFramework.Controls.MetroLabel metroLabel6;
-        private MetroFramework.Controls.MetroRadioButton btMkpProd;
         private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroButton btFiltroProd;
         private MetroFramework.Controls.MetroLabel metroLabel4;

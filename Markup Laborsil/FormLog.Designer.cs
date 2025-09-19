@@ -321,7 +321,7 @@ namespace Markup_Laborsil
             this.txbPromocao.WaterMark = "Código";
             this.txbPromocao.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txbPromocao.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txbPromocao.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbtxbPromocao_KeyDown);
+            this.txbPromocao.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbPromocao_KeyDown);
             this.txbPromocao.Leave += new System.EventHandler(this.txbPromocao_Leave);
             // 
             // txbMarca

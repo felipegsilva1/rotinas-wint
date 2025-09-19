@@ -1,4 +1,5 @@
-﻿using Markup_Laborsil.DAO;
+﻿using DocumentFormat.OpenXml.Wordprocessing;
+using Markup_Laborsil.DAO;
 using Markup_Laborsil.Model;
 using MetroFramework;
 using MetroFramework.Controls;
@@ -26,53 +27,8 @@ namespace Markup_Laborsil
         private void FormConfigMarca_Load(object sender, EventArgs e)
         {
             metroTextBox4.UseCustomBackColor = true;
-        }
-
-        private void txbMarca_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab)
-            {
-                if (int.TryParse(txbMarca.Text, out int codMarca))
-                {
-                    var dao = new MarcaDAO();
-                    var produtos = dao.obterMarcas(codMarca, null);
-
-                    if (produtos != null)
-                    {
-                        metroTextBox4.Text = produtos[0].descMarca;
-                    }
-                    else
-                    {
-                        metroTextBox4.Text = "";
-                        MetroFramework.MetroMessageBox.Show(this, "Produto não encontrado.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        txbMarca.Text = "";
-                    }
-                }
-            }
-        }
-
-        public void txbMarca_Leave(object sender, EventArgs e)
-        {
-            if (int.TryParse(txbMarca.Text, out int codMarca))
-            {
-                var dao = new MarcaDAO();
-                var produtos = dao.obterMarcas(codMarca, null);
-
-                if (produtos != null)
-                {
-                    metroTextBox4.Text = produtos[0].descMarca;
-                }
-                else
-                {
-                    metroTextBox4.Text = "";
-                    MetroFramework.MetroMessageBox.Show(this, "Produto não encontrado.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txbMarca.Text = "";
-                }
-            }
-            else
-            {
-                metroTextBox4.Text = "";
-            }
+            BtAllTipoAtu.Checked = true;
+            btAll.Checked = true;
         }
 
         private void metroButton2_Click(object sender, EventArgs e)
@@ -97,12 +53,14 @@ namespace Markup_Laborsil
             metroGrid1.Rows.Clear();
 
             int? codMarca = string.IsNullOrWhiteSpace(txbMarca.Text) ? (int?)null : int.Parse(txbMarca.Text);
+            string atualAuto = btYes.Checked ? "S" : (btNo.Checked ? "N" : null);
+            string tipoAtualizacao = btMkpProd.Checked ? "P" : (btMkpTabPreco.Checked ? "T" : null);
 
             try
             {
 
                 // Obtem os dados do banco
-                List<Marca> dados = dao.obterMarcas(codMarca, null);
+                List<Marca> dados = dao.obterMarcas(codMarca, null, atualAuto, tipoAtualizacao);
 
                 foreach (Marca item in dados)
                 {
@@ -171,7 +129,7 @@ namespace Markup_Laborsil
             comboCol.DisplayStyle = DataGridViewComboBoxDisplayStyle.DropDownButton; // padrão
             comboCol.ReadOnly = false;
 
-            comboCol.DefaultCellStyle.BackColor = Color.White;
+            comboCol.DefaultCellStyle.BackColor = System.Drawing.Color.White;
 
             metroGrid1.Columns.Add(comboCol);
 
@@ -190,7 +148,7 @@ namespace Markup_Laborsil
             comboColTipoAtu.FlatStyle = FlatStyle.Flat;
             comboColTipoAtu.DisplayStyle = DataGridViewComboBoxDisplayStyle.DropDownButton;
             comboColTipoAtu.ReadOnly = false;
-            comboColTipoAtu.DefaultCellStyle.BackColor = Color.White;
+            comboColTipoAtu.DefaultCellStyle.BackColor = System.Drawing.Color.White;
 
             // 3. Configurar Display/Value
             comboColTipoAtu.DataSource = listaTipoAtu;
@@ -302,6 +260,45 @@ namespace Markup_Laborsil
                 txbMarca_Leave(null, EventArgs.Empty);
             };
             filtro.ShowDialog();
+        }
+
+        private void ValidarEPreencherMarca()
+        {
+            if (int.TryParse(txbMarca.Text, out int codMarca))
+            {
+                var dao = new MarcaDAO();
+                var marca = dao.obterMarcas(codMarca, null, null, null);
+
+                if (marca != null && marca.Count > 0)
+                {
+                    metroTextBox4.Text = marca[0].descMarca;
+                }
+                else
+                {
+                    metroTextBox4.Text = "";
+                    MetroFramework.MetroMessageBox.Show(this, "Marca não encontrada.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txbMarca.Text = "";
+                }
+            }
+            else
+            {
+                // Limpa o campo de descrição se o código digitado não for um número válido
+                metroTextBox4.Text = "";
+            }
+        }
+
+        private void txbMarca_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab)
+            {
+                ValidarEPreencherMarca();
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        public void txbMarca_Leave(object sender, EventArgs e)
+        {
+            ValidarEPreencherMarca();
         }
     }
 }

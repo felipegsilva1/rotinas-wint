@@ -101,32 +101,6 @@ C:\Projetos\rotinas winthor\Markup Laborsil\bin\Release\Costura.xml
 C:\Projetos\rotinas-wint\Markup Laborsil\obj\Release\Markup Laborsil.exe.config
 C:\Projetos\rotinas-wint\Markup Laborsil\obj\Release\Markup_Laborsil.FormConfigTabPreco.resources
 C:\Projetos\rotinas-wint\Markup Laborsil\obj\Release\Markup_Laborsil.FormCadMkpTabPreco.resources
-C:\Projetos\rotinas-wint\Markup Laborsil\bin\Release\ClosedXML.dll
-C:\Projetos\rotinas-wint\Markup Laborsil\bin\Release\ClosedXML.Parser.dll
-C:\Projetos\rotinas-wint\Markup Laborsil\bin\Release\Costura.dll
-C:\Projetos\rotinas-wint\Markup Laborsil\bin\Release\DataGridViewAutoFilter.dll
-C:\Projetos\rotinas-wint\Markup Laborsil\bin\Release\DocumentFormat.OpenXml.dll
-C:\Projetos\rotinas-wint\Markup Laborsil\bin\Release\DocumentFormat.OpenXml.Framework.dll
-C:\Projetos\rotinas-wint\Markup Laborsil\bin\Release\ExcelNumberFormat.dll
-C:\Projetos\rotinas-wint\Markup Laborsil\bin\Release\MetroFramework.Design.dll
-C:\Projetos\rotinas-wint\Markup Laborsil\bin\Release\MetroFramework.dll
-C:\Projetos\rotinas-wint\Markup Laborsil\bin\Release\MetroFramework.Fonts.dll
-C:\Projetos\rotinas-wint\Markup Laborsil\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Projetos\rotinas-wint\Markup Laborsil\bin\Release\Microsoft.Bcl.HashCode.dll
-C:\Projetos\rotinas-wint\Markup Laborsil\bin\Release\Oracle.ManagedDataAccess.dll
-C:\Projetos\rotinas-wint\Markup Laborsil\bin\Release\RBush.dll
-C:\Projetos\rotinas-wint\Markup Laborsil\bin\Release\SixLabors.Fonts.dll
-C:\Projetos\rotinas-wint\Markup Laborsil\bin\Release\System.Buffers.dll
-C:\Projetos\rotinas-wint\Markup Laborsil\bin\Release\System.Memory.dll
-C:\Projetos\rotinas-wint\Markup Laborsil\bin\Release\System.Numerics.Vectors.dll
-C:\Projetos\rotinas-wint\Markup Laborsil\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
-C:\Projetos\rotinas-wint\Markup Laborsil\bin\Release\System.Text.Encodings.Web.dll
-C:\Projetos\rotinas-wint\Markup Laborsil\bin\Release\System.Text.Json.dll
-C:\Projetos\rotinas-wint\Markup Laborsil\bin\Release\System.Threading.Tasks.Extensions.dll
-C:\Projetos\rotinas-wint\Markup Laborsil\bin\Release\System.ValueTuple.dll
-C:\Projetos\rotinas-wint\Markup Laborsil\bin\Release\ClosedXML.pdb
-C:\Projetos\rotinas-wint\Markup Laborsil\bin\Release\Costura.pdb
-C:\Projetos\rotinas-wint\Markup Laborsil\bin\Release\Costura.xml
 C:\Projetos\rotinas wint\rotinas-wint\Markup Laborsil\bin\Release\Markup Laborsil.exe.config
 C:\Projetos\rotinas wint\rotinas-wint\Markup Laborsil\bin\Release\Markup Laborsil.exe
 C:\Projetos\rotinas wint\rotinas-wint\Markup Laborsil\bin\Release\Markup Laborsil.pdb
@@ -168,3 +142,8 @@ C:\Projetos\rotinas wint\rotinas-wint\Markup Laborsil\obj\Release\Markup Laborsi
 C:\Projetos\rotinas wint\rotinas-wint\Markup Laborsil\obj\Release\Markup Laborsil.pdb
 C:\Projetos\rotinas wint\rotinas-wint\Markup Laborsil\obj\Release\Markup Laborsil.csproj.Fody.CopyLocal.cache
 C:\Projetos\rotinas wint\rotinas-wint\Markup Laborsil\obj\Release\Markup Laborsil.csproj.Fody.RuntimeCopyLocal.cache
+C:\Projetos\rotinas-wint\Markup Laborsil\bin\Release\ExcelDataReader.xml
+C:\Projetos\rotinas-wint\Markup Laborsil\bin\Release\ExcelDataReader.DataSet.xml
+C:\Projetos\rotinas-wint\Markup Laborsil\obj\Release\Markup Laborsil.csproj.Fody.CopyLocal.cache
+C:\Projetos\rotinas-wint\Markup Laborsil\obj\Release\Markup Laborsil.csproj.Fody.RuntimeCopyLocal.cache
+C:\Projetos\rotinas-wint\Markup Laborsil\obj\Release\Markup_Laborsil.FormSobre.resources
