@@ -525,89 +525,106 @@ namespace Markup_Laborsil
 
         public void BtnImportar_Click(object sender, EventArgs e)
         {
-            var openFileDialog = new OpenFileDialog
+            try
             {
-                Filter = "Arquivos Suportados (*.xlsx;*.xls;*.csv)|*.xlsx;*.xls;*.csv|" +
-                "Arquivos Excel (*.xlsx;*.xls)|*.xlsx;*.xls|" +
-                "Arquivos CSV (*.csv)|*.csv",
-                Title = "Selecione o arquivo de layout"
-            };
-
-            if (openFileDialog.ShowDialog() != DialogResult.OK)
-                return;
-
-            dadosImportados.Clear();
-
-            // Obtém a extensão do arquivo para decidir como lê-lo
-            string extensao = Path.GetExtension(openFileDialog.FileName).ToLower();
-
-            if (extensao == ".xls" || extensao == ".xlsx")
-            {
-                // --- LÓGICA ORIGINAL PARA LER ARQUIVOS EXCEL ---
-                using (var stream = File.Open(openFileDialog.FileName, FileMode.Open, FileAccess.Read))
-                using (var reader = ExcelReaderFactory.CreateReader(stream))
+                var openFileDialog = new OpenFileDialog
                 {
-                    var result = reader.AsDataSet(new ExcelDataSetConfiguration()
-                    {
-                        ConfigureDataTable = (_) => new ExcelDataTableConfiguration() { UseHeaderRow = true }
-                    });
+                    Filter = "Arquivos Suportados (*.xlsx;*.xls;*.csv)|*.xlsx;*.xls;*.csv|" +
+                    "Arquivos Excel (*.xlsx;*.xls)|*.xlsx;*.xls|" +
+                    "Arquivos CSV (*.csv)|*.csv",
+                    Title = "Selecione o arquivo de layout"
+                };
 
-                    var table = result.Tables[0]; // primeira aba
+                if (openFileDialog.ShowDialog() != DialogResult.OK)
+                    return;
 
-                    foreach (DataRow row in table.Rows)
+                dadosImportados.Clear();
+
+                // Obtém a extensão do arquivo para decidir como lê-lo
+                string extensao = Path.GetExtension(openFileDialog.FileName).ToLower();
+
+                if (extensao == ".xls" || extensao == ".xlsx")
+                {
+                    // --- LÓGICA ORIGINAL PARA LER ARQUIVOS EXCEL ---
+                    using (var stream = File.Open(openFileDialog.FileName, FileMode.Open, FileAccess.Read))
+                    using (var reader = ExcelReaderFactory.CreateReader(stream))
                     {
-                        dadosImportados.Add(new MkpPromocao
+                        var result = reader.AsDataSet(new ExcelDataSetConfiguration()
                         {
-                            codProd = Convert.ToInt32(row[0]),
-                            codPromocao = Convert.ToInt32(row[1]),
-                            permkp = Convert.ToDecimal(row[2])
+                            ConfigureDataTable = (_) => new ExcelDataTableConfiguration() { UseHeaderRow = true }
                         });
+
+                        var table = result.Tables[0]; // primeira aba
+
+                        foreach (DataRow row in table.Rows)
+                        {
+                            dadosImportados.Add(new MkpPromocao
+                            {
+                                codProd = Convert.ToInt32(row[0]),
+                                codPromocao = Convert.ToInt32(row[1]),
+                                permkp = Convert.ToDecimal(row[2])
+                            });
+                        }
                     }
                 }
-            }
-            else if (extensao == ".csv")
-            {
-                // --- NOVA LÓGICA PARA LER ARQUIVOS CSV ---
-                var linhas = File.ReadAllLines(openFileDialog.FileName).Skip(1); // Pula o cabeçalho
-                foreach (var linha in linhas)
+                else if (extensao == ".csv")
                 {
-                    // O separador pode ser ',' ou ';', ajuste conforme sua necessidade
-                    string[] colunas = linha.Split(';');
-
-                    if (colunas.Length >= 3) // Garante que a linha tem dados suficientes
+                    // --- NOVA LÓGICA PARA LER ARQUIVOS CSV ---
+                    var linhas = File.ReadAllLines(openFileDialog.FileName).Skip(1); // Pula o cabeçalho
+                    foreach (var linha in linhas)
                     {
-                        dadosImportados.Add(new MkpPromocao
+                        // O separador pode ser ',' ou ';', ajuste conforme sua necessidade
+                        string[] colunas = linha.Split(';');
+
+                        if (colunas.Length >= 3) // Garante que a linha tem dados suficientes
                         {
-                            codProd = Convert.ToInt32(colunas[0]),
-                            codPromocao = Convert.ToInt32(colunas[1]),
-                            permkp = Convert.ToDecimal(colunas[2])
-                        });
+                            dadosImportados.Add(new MkpPromocao
+                            {
+                                codProd = Convert.ToInt32(colunas[0]),
+                                codPromocao = Convert.ToInt32(colunas[1]),
+                                permkp = Convert.ToDecimal(colunas[2])
+                            });
+                        }
                     }
                 }
-            }
 
-            // Pré-carregar promoções
-            CabPromocaoDAO promocaoDAO = new CabPromocaoDAO();
-            List<CabPromocao> promocao = promocaoDAO.ObterCabecalhoPromocoes(null, null);
-            Dictionary<int?, CabPromocao> promoLookup = promocao.ToDictionary(p => p.codPromocao);
+                // Pré-carregar promoções
+                CabPromocaoDAO promocaoDAO = new CabPromocaoDAO();
+                List<CabPromocao> promocao = promocaoDAO.ObterCabecalhoPromocoes(null, null);
+                Dictionary<int?, CabPromocao> promoLookup = promocao.ToDictionary(p => p.codPromocao);
 
-            var promocoes = dadosImportados
-                .Select(p => p.codPromocao)
-                .Distinct()
-                .Select(p =>
-                {
-                    promoLookup.TryGetValue(p, out CabPromocao cabpromocao);
-                    string descricao = cabpromocao != null ? cabpromocao.descPromocao : "Descrição não encontrada";
-
-                    return new
+                var promocoes = dadosImportados
+                    .Select(p => p.codPromocao)
+                    .Distinct()
+                    .Select(p =>
                     {
-                        CodPromocao = p,
-                        Descricao = descricao
-                    };
-                })
-                .ToList();
+                        promoLookup.TryGetValue(p, out CabPromocao cabpromocao);
+                        string descricao = cabpromocao != null ? cabpromocao.descPromocao : "Descrição não encontrada";
 
-            metroGrid2.DataSource = promocoes;
+                        return new
+                        {
+                            CodPromocao = p,
+                            Descricao = descricao
+                        };
+                    })
+                    .ToList();
+
+                metroGrid2.DataSource = promocoes;
+            }
+            catch (System.IO.IOException ioEx)
+            {
+                string mensagem = "❌ **Erro ao importar planilha**\n\n" +
+                         "O arquivo está sendo usado por outro programa.\n" +
+                         "**Soluções:**\n" +
+                         "• Feche o arquivo no Excel ou outro programa\n" +
+                         "• Verifique se não há outros processos usando o arquivo\n";
+
+                MetroFramework.MetroMessageBox.Show(this, mensagem, "Arquivo em Uso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MetroFramework.MetroMessageBox.Show(this, "Erro ao importar o arquivo: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void metroGrid2_SelectionChanged(object sender, EventArgs e)
@@ -682,145 +699,198 @@ namespace Markup_Laborsil
 
         private void btSalvar_Click(object sender, EventArgs e)
         {
-            MkpPromocaoDAO mkpPromocaoDao = new MkpPromocaoDAO();
+            // Criar e configurar a ProgressBar
+            ProgressBar progressBar = new ProgressBar();
+            progressBar.Style = ProgressBarStyle.Marquee;
+            progressBar.MarqueeAnimationSpeed = 50;
+            progressBar.Dock = DockStyle.Bottom;
+            this.Controls.Add(progressBar);
 
-            // Prepara os lookups para otimização de performance
-            ProdutoDAO produtoDao = new ProdutoDAO();
-            List<Produto> todosProdutos = produtoDao.getProdutosMkp(null, null, null, null, null);
-            Dictionary<int, Produto> produtosLookup = todosProdutos.ToDictionary(p => p.codProd);
+            // Label para mostrar status
+            Label lblStatus = new Label();
+            lblStatus.Text = "Carregando dados...";
+            lblStatus.Dock = DockStyle.Bottom;
+            this.Controls.Add(lblStatus);
 
-            MarcaDAO marcaDao = new MarcaDAO();
-            List<Marca> todasMarcas = marcaDao.obterMarcas(null, null, null, null);
-            Dictionary<int, Marca> marcasLookup = todasMarcas.ToDictionary(m => m.CodMarca);
+            // Desabilitar o botão para evitar cliques múltiplos
+            btSalvar.Enabled = false;
 
-            CabPromocaoDAO cabPromocaoDao = new CabPromocaoDAO();
-            List<CabPromocao> todasCabPromocoes = cabPromocaoDao.ObterCabecalhoPromocoes();
-            Dictionary<int?, CabPromocao> cabPromocaoLookup = todasCabPromocoes.ToDictionary(cp => cp.codPromocao);
-
-
-            if (CheckBtnExcluirTudo.Checked)
+            try
             {
-                DialogResult result = MetroFramework.MetroMessageBox.Show(this,
-                    "O checkbox 'Excluir todos' está marcado. Isso apagará todas as informações da tabela. Deseja continuar?",
-                    "Confirmação de Exclusão Total",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Warning
-                );
+                lblStatus.Text = "Preparando lookups...";
+                Application.DoEvents(); // Atualiza a interface
 
-                if (result == DialogResult.Yes)
+                MkpPromocaoDAO mkpPromocaoDao = new MkpPromocaoDAO();
+
+                // Prepara os lookups para otimização de performance
+                ProdutoDAO produtoDao = new ProdutoDAO();
+                List<Produto> todosProdutos = produtoDao.getProdutosMkp(null, null, null, null, null);
+                Dictionary<int, Produto> produtosLookup = todosProdutos.ToDictionary(p => p.codProd);
+
+                MarcaDAO marcaDao = new MarcaDAO();
+                List<Marca> todasMarcas = marcaDao.obterMarcas(null, null, null, null);
+                Dictionary<int, Marca> marcasLookup = todasMarcas.ToDictionary(m => m.CodMarca);
+
+                CabPromocaoDAO cabPromocaoDao = new CabPromocaoDAO();
+                List<CabPromocao> todasCabPromocoes = cabPromocaoDao.ObterCabecalhoPromocoes();
+                Dictionary<int?, CabPromocao> cabPromocaoLookup = todasCabPromocoes.ToDictionary(cp => cp.codPromocao);
+
+                if (CheckBtnExcluirTudo.Checked)
                 {
-                    mkpPromocaoDao.DeletarMkpPromocao(null, null);
+                    DialogResult result = MetroFramework.MetroMessageBox.Show(this,
+                        "O checkbox 'Excluir todos' está marcado. Isso apagará todas as informações da tabela. Deseja continuar?",
+                        "Confirmação de Exclusão Total",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Warning
+                    );
 
-                    // Após a exclusão total, insere todos os itens de dadosImportados
+                    if (result == DialogResult.Yes)
+                    {
+                        lblStatus.Text = "Excluindo dados existentes...";
+                        Application.DoEvents();
+
+                        mkpPromocaoDao.DeletarMkpPromocao(null, null);
+
+                        lblStatus.Text = $"Inserindo dados... (0/{dadosImportados.Count})";
+                        Application.DoEvents();
+
+                        // Após a exclusão total, insere todos os itens de dadosImportados
+                        int contador = 0;
+                        foreach (var itemMkp in dadosImportados)
+                        {
+                            contador++;
+                            if (contador % 10 == 0) // Atualiza a cada 10 itens para não sobrecarregar
+                            {
+                                lblStatus.Text = $"Inserindo dados... ({contador}/{dadosImportados.Count})";
+                                Application.DoEvents();
+                            }
+
+                            int? currentCodProd = itemMkp.codProd;
+                            decimal currentPerMkp = itemMkp.permkp;
+                            int? currentCodPromo = itemMkp.codPromocao;
+
+                            if (!currentCodProd.HasValue || !currentCodPromo.HasValue)
+                            {
+                                continue;
+                            }
+
+                            // Busca detalhes para a inserção (produto, marca, promoção)
+                            Produto produtoDetalhes;
+                            produtosLookup.TryGetValue(currentCodProd.Value, out produtoDetalhes);
+                            string descricaoProduto = produtoDetalhes != null ? produtoDetalhes.descricao : "Descrição não encontrada";
+                            int codmarca = produtoDetalhes != null && produtoDetalhes.codMarca.HasValue ? Convert.ToInt32(produtoDetalhes.codMarca) : 0;
+
+                            string descricaoMarca = "Marca não encontrada";
+                            if (produtoDetalhes != null && produtoDetalhes.codMarca.HasValue)
+                            {
+                                Marca marcaEncontrada;
+                                if (marcasLookup.TryGetValue(Convert.ToInt32(produtoDetalhes.codMarca), out marcaEncontrada))
+                                {
+                                    descricaoMarca = marcaEncontrada.descMarca;
+                                }
+                            }
+
+                            string promocaoText = "Promoção não encontrada";
+                            CabPromocao cabPromocaoDetalhes;
+                            if (cabPromocaoLookup.TryGetValue(currentCodPromo, out cabPromocaoDetalhes))
+                            {
+                                promocaoText = cabPromocaoDetalhes.descPromocao;
+                            }
+
+                            mkpPromocaoDao.InsertMkpPromocao(
+                                currentCodProd.Value,
+                                currentPerMkp,
+                                descricaoProduto,
+                                descricaoMarca,
+                                currentCodPromo.Value,
+                                promocaoText,
+                                codmarca
+                            );
+                        }
+                        MetroFramework.MetroMessageBox.Show(this, "Todos os dados foram excluídos e os novos dados foram inseridos com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    lblStatus.Text = $"Processando dados... (0/{dadosImportados.Count})";
+                    Application.DoEvents();
+
+                    int contador = 0;
                     foreach (var itemMkp in dadosImportados)
                     {
+                        contador++;
+                        if (contador % 10 == 0) // Atualiza a cada 10 itens
+                        {
+                            lblStatus.Text = $"Processando dados... ({contador}/{dadosImportados.Count})";
+                            Application.DoEvents();
+                        }
+
                         int? currentCodProd = itemMkp.codProd;
                         decimal currentPerMkp = itemMkp.permkp;
                         int? currentCodPromo = itemMkp.codPromocao;
 
-                        if (!currentCodProd.HasValue || !currentCodPromo.HasValue)
+                        // Verifica se o produto já existe para esta promoção
+                        bool existe = mkpPromocaoDao.VerificarExisteProdutoEmPromocao(currentCodProd.Value, currentCodPromo.Value);
+
+                        if (existe)
                         {
-                            continue;
+                            // Se existe, atualiza o registro
+                            mkpPromocaoDao.AtualizarMkpPromocao(currentCodProd.Value, currentCodPromo.Value, currentPerMkp);
                         }
-
-                        // Busca detalhes para a inserção (produto, marca, promoção)
-                        Produto produtoDetalhes;
-                        produtosLookup.TryGetValue(currentCodProd.Value, out produtoDetalhes);
-                        string descricaoProduto = produtoDetalhes != null ? produtoDetalhes.descricao : "Descrição não encontrada";
-                        int codmarca = produtoDetalhes != null && produtoDetalhes.codMarca.HasValue ? Convert.ToInt32(produtoDetalhes.codMarca) : 0;
-
-                        string descricaoMarca = "Marca não encontrada";
-                        if (produtoDetalhes != null && produtoDetalhes.codMarca.HasValue)
+                        else
                         {
-                            Marca marcaEncontrada;
-                            if (marcasLookup.TryGetValue(Convert.ToInt32(produtoDetalhes.codMarca), out marcaEncontrada))
+                            // Se não existe, insere um novo registro
+                            Produto produtoDetalhes = null;
+                            string descricaoProduto = "Descrição não encontrada";
+                            produtosLookup.TryGetValue(currentCodProd.Value, out produtoDetalhes);
+                            descricaoProduto = produtoDetalhes != null ? produtoDetalhes.descricao : "Descrição não encontrada";
+                            int codmarca = produtoDetalhes != null && produtoDetalhes.codMarca.HasValue ? Convert.ToInt32(produtoDetalhes.codMarca) : 0;
+
+                            string descricaoMarca = "Marca não encontrada";
+                            if (produtoDetalhes != null && produtoDetalhes.codMarca.HasValue)
                             {
-                                descricaoMarca = marcaEncontrada.descMarca;
+                                Marca marcaEncontrada;
+                                if (marcasLookup.TryGetValue(Convert.ToInt32(produtoDetalhes.codMarca), out marcaEncontrada))
+                                {
+                                    descricaoMarca = marcaEncontrada.descMarca;
+                                }
                             }
-                        }
 
-                        string promocaoText = "Promoção não encontrada";
-                        CabPromocao cabPromocaoDetalhes;
-                        if (cabPromocaoLookup.TryGetValue(currentCodPromo, out cabPromocaoDetalhes))
-                        {
-                            promocaoText = cabPromocaoDetalhes.descPromocao;
-                        }
+                            string promocaoText = "Promoção não encontrada";
+                            CabPromocao cabPromocaoDetalhes;
+                            if (cabPromocaoLookup.TryGetValue(currentCodPromo, out cabPromocaoDetalhes))
+                            {
+                                promocaoText = cabPromocaoDetalhes.descPromocao;
+                            }
 
-                        mkpPromocaoDao.InsertMkpPromocao(
-                            currentCodProd.Value,
-                            currentPerMkp,
-                            descricaoProduto,
-                            descricaoMarca,
-                            currentCodPromo.Value,
-                            promocaoText,
-                            codmarca
-                        );
+                            mkpPromocaoDao.InsertMkpPromocao(
+                                currentCodProd.Value,
+                                currentPerMkp,
+                                descricaoProduto,
+                                descricaoMarca,
+                                currentCodPromo.Value,
+                                promocaoText,
+                                codmarca
+                            );
+                        }
                     }
-                    MessageBox.Show("Todos os dados foram excluídos e os novos dados foram inseridos com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MetroFramework.MetroMessageBox.Show(this, "Dados processados (atualizados/inseridos) com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-            }
-            else
-            {
-                foreach (var itemMkp in dadosImportados)
+
+                metroGrid2.DataSource = null;
+                metroGrid3.DataSource = null;
+
+                if (TabControle.TabPages.ContainsKey("Lista"))
                 {
-                    int? currentCodProd = itemMkp.codProd;
-                    decimal currentPerMkp = itemMkp.permkp;
-                    int? currentCodPromo = itemMkp.codPromocao;
-
-                    // Verifica se o produto já existe para esta promoção
-                    bool existe = mkpPromocaoDao.VerificarExisteProdutoEmPromocao(currentCodProd.Value, currentCodPromo.Value);
-
-                    if (existe)
-                    {
-                        // Se existe, atualiza o registro
-                        mkpPromocaoDao.AtualizarMkpPromocao(currentCodProd.Value, currentCodPromo.Value, currentPerMkp);
-                    }
-                    else
-                    {
-                        // Se não existe, insere um novo registro
-                        Produto produtoDetalhes = null;
-                        string descricaoProduto = "Descrição não encontrada";
-                        produtosLookup.TryGetValue(currentCodProd.Value, out produtoDetalhes);
-                        descricaoProduto = produtoDetalhes != null ? produtoDetalhes.descricao : "Descrição não encontrada";
-                        int codmarca = produtoDetalhes != null && produtoDetalhes.codMarca.HasValue ? Convert.ToInt32(produtoDetalhes.codMarca) : 0;
-
-                        string descricaoMarca = "Marca não encontrada";
-                        if (produtoDetalhes != null && produtoDetalhes.codMarca.HasValue)
-                        {
-                            Marca marcaEncontrada;
-                            if (marcasLookup.TryGetValue(Convert.ToInt32(produtoDetalhes.codMarca), out marcaEncontrada))
-                            {
-                                descricaoMarca = marcaEncontrada.descMarca;
-                            }
-                        }
-
-                        string promocaoText = "Promoção não encontrada";
-                        CabPromocao cabPromocaoDetalhes;
-                        if (cabPromocaoLookup.TryGetValue(currentCodPromo, out cabPromocaoDetalhes))
-                        {
-                            promocaoText = cabPromocaoDetalhes.descPromocao;
-                        }
-
-                        mkpPromocaoDao.InsertMkpPromocao(
-                            currentCodProd.Value,
-                            currentPerMkp,
-                            descricaoProduto,
-                            descricaoMarca,
-                            currentCodPromo.Value,
-                            promocaoText,
-                            codmarca
-                        );
-                    }
+                    TabControle.SelectedTab = TabControle.TabPages["Lista"];
                 }
-                MessageBox.Show("Dados processados (atualizados/inseridos) com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-            metroGrid2.DataSource = null;
-            metroGrid3.DataSource = null;
-
-            if (TabControle.TabPages.ContainsKey("Lista")) 
+            finally
             {
-                TabControle.SelectedTab = TabControle.TabPages["Lista"];
+                // Remove os controles de progresso
+                this.Controls.Remove(progressBar);
+                this.Controls.Remove(lblStatus);
+                btSalvar.Enabled = true;
             }
         }
 

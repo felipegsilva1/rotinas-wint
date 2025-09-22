@@ -33,6 +33,7 @@ namespace Markup_Laborsil
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLog));
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
@@ -549,6 +550,7 @@ namespace Markup_Laborsil
             this.Controls.Add(this.metroPanel3);
             this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.metroPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormLog";
             this.Text = "Acompanhamento de Markup";
             this.Load += new System.EventHandler(this.FormLog_Load);

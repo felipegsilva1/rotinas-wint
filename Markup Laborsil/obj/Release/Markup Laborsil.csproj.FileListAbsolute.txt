@@ -98,7 +98,6 @@ C:\Projetos\rotinas winthor\Markup Laborsil\bin\Release\System.ValueTuple.dll
 C:\Projetos\rotinas winthor\Markup Laborsil\bin\Release\ClosedXML.pdb
 C:\Projetos\rotinas winthor\Markup Laborsil\bin\Release\Costura.pdb
 C:\Projetos\rotinas winthor\Markup Laborsil\bin\Release\Costura.xml
-C:\Projetos\rotinas-wint\Markup Laborsil\obj\Release\Markup Laborsil.exe.config
 C:\Projetos\rotinas-wint\Markup Laborsil\obj\Release\Markup_Laborsil.FormConfigTabPreco.resources
 C:\Projetos\rotinas-wint\Markup Laborsil\obj\Release\Markup_Laborsil.FormCadMkpTabPreco.resources
 C:\Projetos\rotinas wint\rotinas-wint\Markup Laborsil\bin\Release\Markup Laborsil.exe.config
@@ -144,6 +143,7 @@ C:\Projetos\rotinas wint\rotinas-wint\Markup Laborsil\obj\Release\Markup Laborsi
 C:\Projetos\rotinas wint\rotinas-wint\Markup Laborsil\obj\Release\Markup Laborsil.csproj.Fody.RuntimeCopyLocal.cache
 C:\Projetos\rotinas-wint\Markup Laborsil\bin\Release\ExcelDataReader.xml
 C:\Projetos\rotinas-wint\Markup Laborsil\bin\Release\ExcelDataReader.DataSet.xml
+C:\Projetos\rotinas-wint\Markup Laborsil\obj\Release\Markup_Laborsil.FormSobre.resources
+C:\Projetos\rotinas-wint\Markup Laborsil\obj\Release\Markup Laborsil.exe.config
 C:\Projetos\rotinas-wint\Markup Laborsil\obj\Release\Markup Laborsil.csproj.Fody.CopyLocal.cache
 C:\Projetos\rotinas-wint\Markup Laborsil\obj\Release\Markup Laborsil.csproj.Fody.RuntimeCopyLocal.cache
-C:\Projetos\rotinas-wint\Markup Laborsil\obj\Release\Markup_Laborsil.FormSobre.resources

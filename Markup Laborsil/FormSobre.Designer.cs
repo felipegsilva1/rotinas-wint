@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSobre));
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
             this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +66,14 @@
             this.metroTabPage1.VerticalScrollbarBarColor = true;
             this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.VerticalScrollbarSize = 10;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(3, 3);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(740, 546);
+            this.richTextBox1.TabIndex = 2;
+            this.richTextBox1.Text = "cbnccn";
             // 
             // metroTabPage2
             // 
@@ -108,20 +117,13 @@
             this.metroTabPage4.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage4.VerticalScrollbarSize = 10;
             // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(3, 3);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(740, 546);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "cbnccn";
-            // 
             // FormSobre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 680);
             this.Controls.Add(this.metroTabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormSobre";
             this.Text = "Sobre o Processo de Marckup por Tabela de Preço";
             this.Load += new System.EventHandler(this.FormSobre_Load);

@@ -28,14 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConfigMarca));
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.btSalvar = new MetroFramework.Controls.MetroButton();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
+            this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
+            this.BtAllTipoAtu = new MetroFramework.Controls.MetroRadioButton();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.btMkpTabPreco = new MetroFramework.Controls.MetroRadioButton();
+            this.btMkpProd = new MetroFramework.Controls.MetroRadioButton();
+            this.btAll = new MetroFramework.Controls.MetroRadioButton();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.btNo = new MetroFramework.Controls.MetroRadioButton();
+            this.btYes = new MetroFramework.Controls.MetroRadioButton();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
             this.BtnPesquisarLog = new MetroFramework.Controls.MetroButton();
             this.metroButton4 = new MetroFramework.Controls.MetroButton();
@@ -45,20 +55,11 @@
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.btAll = new MetroFramework.Controls.MetroRadioButton();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.btNo = new MetroFramework.Controls.MetroRadioButton();
-            this.btYes = new MetroFramework.Controls.MetroRadioButton();
-            this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
-            this.BtAllTipoAtu = new MetroFramework.Controls.MetroRadioButton();
-            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
-            this.btMkpTabPreco = new MetroFramework.Controls.MetroRadioButton();
-            this.btMkpProd = new MetroFramework.Controls.MetroRadioButton();
             this.metroPanel3.SuspendLayout();
             this.metroPanel2.SuspendLayout();
+            this.metroPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             this.metroPanel1.SuspendLayout();
-            this.metroPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroPanel3
@@ -134,6 +135,103 @@
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel2.VerticalScrollbarSize = 10;
             // 
+            // metroPanel4
+            // 
+            this.metroPanel4.Controls.Add(this.BtAllTipoAtu);
+            this.metroPanel4.Controls.Add(this.metroLabel6);
+            this.metroPanel4.Controls.Add(this.btMkpTabPreco);
+            this.metroPanel4.Controls.Add(this.btMkpProd);
+            this.metroPanel4.HorizontalScrollbarBarColor = true;
+            this.metroPanel4.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel4.HorizontalScrollbarSize = 10;
+            this.metroPanel4.Location = new System.Drawing.Point(466, 12);
+            this.metroPanel4.Name = "metroPanel4";
+            this.metroPanel4.Size = new System.Drawing.Size(200, 77);
+            this.metroPanel4.TabIndex = 55;
+            this.metroPanel4.VerticalScrollbarBarColor = true;
+            this.metroPanel4.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel4.VerticalScrollbarSize = 10;
+            // 
+            // BtAllTipoAtu
+            // 
+            this.BtAllTipoAtu.AutoSize = true;
+            this.BtAllTipoAtu.Location = new System.Drawing.Point(6, 62);
+            this.BtAllTipoAtu.Name = "BtAllTipoAtu";
+            this.BtAllTipoAtu.Size = new System.Drawing.Size(55, 15);
+            this.BtAllTipoAtu.TabIndex = 54;
+            this.BtAllTipoAtu.Text = "Todos";
+            this.BtAllTipoAtu.UseSelectable = true;
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel6.Location = new System.Drawing.Point(6, 0);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(106, 15);
+            this.metroLabel6.TabIndex = 52;
+            this.metroLabel6.Text = "Tipo de Atualização";
+            // 
+            // btMkpTabPreco
+            // 
+            this.btMkpTabPreco.AutoSize = true;
+            this.btMkpTabPreco.Location = new System.Drawing.Point(6, 41);
+            this.btMkpTabPreco.Name = "btMkpTabPreco";
+            this.btMkpTabPreco.Size = new System.Drawing.Size(189, 15);
+            this.btMkpTabPreco.TabIndex = 53;
+            this.btMkpTabPreco.Text = "Markup por Tabela de Preço (T)";
+            this.btMkpTabPreco.UseSelectable = true;
+            // 
+            // btMkpProd
+            // 
+            this.btMkpProd.AutoSize = true;
+            this.btMkpProd.Location = new System.Drawing.Point(6, 20);
+            this.btMkpProd.Name = "btMkpProd";
+            this.btMkpProd.Size = new System.Drawing.Size(149, 15);
+            this.btMkpProd.TabIndex = 51;
+            this.btMkpProd.Text = "Markup por Produto (P)";
+            this.btMkpProd.UseSelectable = true;
+            // 
+            // btAll
+            // 
+            this.btAll.AutoSize = true;
+            this.btAll.Location = new System.Drawing.Point(688, 74);
+            this.btAll.Name = "btAll";
+            this.btAll.Size = new System.Drawing.Size(55, 15);
+            this.btAll.TabIndex = 54;
+            this.btAll.Text = "Todos";
+            this.btAll.UseSelectable = true;
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel3.Location = new System.Drawing.Point(688, 12);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(140, 15);
+            this.metroLabel3.TabIndex = 52;
+            this.metroLabel3.Text = "Atualiza Automaticamente";
+            // 
+            // btNo
+            // 
+            this.btNo.AutoSize = true;
+            this.btNo.Location = new System.Drawing.Point(688, 53);
+            this.btNo.Name = "btNo";
+            this.btNo.Size = new System.Drawing.Size(45, 15);
+            this.btNo.TabIndex = 53;
+            this.btNo.Text = "Não";
+            this.btNo.UseSelectable = true;
+            // 
+            // btYes
+            // 
+            this.btYes.AutoSize = true;
+            this.btYes.Location = new System.Drawing.Point(688, 32);
+            this.btYes.Name = "btYes";
+            this.btYes.Size = new System.Drawing.Size(43, 15);
+            this.btYes.TabIndex = 51;
+            this.btYes.Text = "Sim";
+            this.btYes.UseSelectable = true;
+            // 
             // metroGrid1
             // 
             this.metroGrid1.AllowUserToResizeRows = false;
@@ -141,38 +239,38 @@
             this.metroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.metroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.metroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.metroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle2;
             this.metroGrid1.EnableHeadersVisualStyles = false;
             this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.metroGrid1.Location = new System.Drawing.Point(3, 94);
             this.metroGrid1.Name = "metroGrid1";
             this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.metroGrid1.Size = new System.Drawing.Size(900, 315);
@@ -320,103 +418,6 @@
             this.metroLabel1.TabIndex = 2;
             this.metroLabel1.Text = "O que deseja Fazer?";
             // 
-            // btAll
-            // 
-            this.btAll.AutoSize = true;
-            this.btAll.Location = new System.Drawing.Point(688, 74);
-            this.btAll.Name = "btAll";
-            this.btAll.Size = new System.Drawing.Size(55, 15);
-            this.btAll.TabIndex = 54;
-            this.btAll.Text = "Todos";
-            this.btAll.UseSelectable = true;
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.metroLabel3.Location = new System.Drawing.Point(688, 12);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(140, 15);
-            this.metroLabel3.TabIndex = 52;
-            this.metroLabel3.Text = "Atualiza Automaticamente";
-            // 
-            // btNo
-            // 
-            this.btNo.AutoSize = true;
-            this.btNo.Location = new System.Drawing.Point(688, 53);
-            this.btNo.Name = "btNo";
-            this.btNo.Size = new System.Drawing.Size(45, 15);
-            this.btNo.TabIndex = 53;
-            this.btNo.Text = "Não";
-            this.btNo.UseSelectable = true;
-            // 
-            // btYes
-            // 
-            this.btYes.AutoSize = true;
-            this.btYes.Location = new System.Drawing.Point(688, 32);
-            this.btYes.Name = "btYes";
-            this.btYes.Size = new System.Drawing.Size(43, 15);
-            this.btYes.TabIndex = 51;
-            this.btYes.Text = "Sim";
-            this.btYes.UseSelectable = true;
-            // 
-            // metroPanel4
-            // 
-            this.metroPanel4.Controls.Add(this.BtAllTipoAtu);
-            this.metroPanel4.Controls.Add(this.metroLabel6);
-            this.metroPanel4.Controls.Add(this.btMkpTabPreco);
-            this.metroPanel4.Controls.Add(this.btMkpProd);
-            this.metroPanel4.HorizontalScrollbarBarColor = true;
-            this.metroPanel4.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel4.HorizontalScrollbarSize = 10;
-            this.metroPanel4.Location = new System.Drawing.Point(466, 12);
-            this.metroPanel4.Name = "metroPanel4";
-            this.metroPanel4.Size = new System.Drawing.Size(200, 77);
-            this.metroPanel4.TabIndex = 55;
-            this.metroPanel4.VerticalScrollbarBarColor = true;
-            this.metroPanel4.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel4.VerticalScrollbarSize = 10;
-            // 
-            // BtAllTipoAtu
-            // 
-            this.BtAllTipoAtu.AutoSize = true;
-            this.BtAllTipoAtu.Location = new System.Drawing.Point(6, 62);
-            this.BtAllTipoAtu.Name = "BtAllTipoAtu";
-            this.BtAllTipoAtu.Size = new System.Drawing.Size(55, 15);
-            this.BtAllTipoAtu.TabIndex = 54;
-            this.BtAllTipoAtu.Text = "Todos";
-            this.BtAllTipoAtu.UseSelectable = true;
-            // 
-            // metroLabel6
-            // 
-            this.metroLabel6.AutoSize = true;
-            this.metroLabel6.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.metroLabel6.Location = new System.Drawing.Point(6, 0);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(106, 15);
-            this.metroLabel6.TabIndex = 52;
-            this.metroLabel6.Text = "Tipo de Atualização";
-            // 
-            // btMkpTabPreco
-            // 
-            this.btMkpTabPreco.AutoSize = true;
-            this.btMkpTabPreco.Location = new System.Drawing.Point(6, 41);
-            this.btMkpTabPreco.Name = "btMkpTabPreco";
-            this.btMkpTabPreco.Size = new System.Drawing.Size(189, 15);
-            this.btMkpTabPreco.TabIndex = 53;
-            this.btMkpTabPreco.Text = "Markup por Tabela de Preço (T)";
-            this.btMkpTabPreco.UseSelectable = true;
-            // 
-            // btMkpProd
-            // 
-            this.btMkpProd.AutoSize = true;
-            this.btMkpProd.Location = new System.Drawing.Point(6, 20);
-            this.btMkpProd.Name = "btMkpProd";
-            this.btMkpProd.Size = new System.Drawing.Size(149, 15);
-            this.btMkpProd.TabIndex = 51;
-            this.btMkpProd.Text = "Markup por Produto (P)";
-            this.btMkpProd.UseSelectable = true;
-            // 
             // FormConfigMarca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -425,17 +426,18 @@
             this.Controls.Add(this.metroPanel3);
             this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.metroPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormConfigMarca";
             this.Text = "Acompanhamento de Markup";
             this.Load += new System.EventHandler(this.FormConfigMarca_Load);
             this.metroPanel3.ResumeLayout(false);
             this.metroPanel2.ResumeLayout(false);
             this.metroPanel2.PerformLayout();
+            this.metroPanel4.ResumeLayout(false);
+            this.metroPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
-            this.metroPanel4.ResumeLayout(false);
-            this.metroPanel4.PerformLayout();
             this.ResumeLayout(false);
 
         }

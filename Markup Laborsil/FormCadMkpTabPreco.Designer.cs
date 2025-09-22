@@ -37,6 +37,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadMkpTabPreco));
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
@@ -780,6 +781,7 @@
             this.Controls.Add(this.TabControle);
             this.Controls.Add(this.metroPanel3);
             this.Controls.Add(this.metroPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormCadMkpTabPreco";
             this.Text = "Acompanhamento de Markup";
             this.Load += new System.EventHandler(this.FormCadMkpProd_Load);

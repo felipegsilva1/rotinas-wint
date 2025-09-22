@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.metroRadioButton1 = new MetroFramework.Controls.MetroRadioButton();
             this.NextBtn = new MetroFramework.Controls.MetroButton();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
@@ -37,8 +38,8 @@
             this.metroRadioButton3 = new MetroFramework.Controls.MetroRadioButton();
             this.metroRadioButton2 = new MetroFramework.Controls.MetroRadioButton();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
-            this.CloseBtn = new MetroFramework.Controls.MetroButton();
             this.btSobre = new MetroFramework.Controls.MetroButton();
+            this.CloseBtn = new MetroFramework.Controls.MetroButton();
             this.metroPanel1.SuspendLayout();
             this.metroPanel2.SuspendLayout();
             this.metroPanel3.SuspendLayout();
@@ -164,17 +165,6 @@
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel3.VerticalScrollbarSize = 10;
             // 
-            // CloseBtn
-            // 
-            this.CloseBtn.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.CloseBtn.Location = new System.Drawing.Point(806, 3);
-            this.CloseBtn.Name = "CloseBtn";
-            this.CloseBtn.Size = new System.Drawing.Size(97, 27);
-            this.CloseBtn.TabIndex = 2;
-            this.CloseBtn.Text = "Sair";
-            this.CloseBtn.UseSelectable = true;
-            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
-            // 
             // btSobre
             // 
             this.btSobre.FontWeight = MetroFramework.MetroButtonWeight.Regular;
@@ -186,6 +176,17 @@
             this.btSobre.UseSelectable = true;
             this.btSobre.Click += new System.EventHandler(this.btSobre_Click);
             // 
+            // CloseBtn
+            // 
+            this.CloseBtn.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.CloseBtn.Location = new System.Drawing.Point(806, 3);
+            this.CloseBtn.Name = "CloseBtn";
+            this.CloseBtn.Size = new System.Drawing.Size(97, 27);
+            this.CloseBtn.TabIndex = 2;
+            this.CloseBtn.Text = "Sair";
+            this.CloseBtn.UseSelectable = true;
+            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -194,6 +195,7 @@
             this.Controls.Add(this.metroPanel3);
             this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.metroPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Acompanhamento de Markup";
             this.Load += new System.EventHandler(this.Form1_Load);

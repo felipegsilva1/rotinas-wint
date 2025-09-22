@@ -13,11 +13,13 @@ namespace Markup_Laborsil
         //private static string _connectionString = "User Id=LABORSIL;Password=L4BO3SIL;Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=132.226.252.205)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=WINT)))";
         private static string _connectionString = "User Id=LABORSIL;Password=L4BO3SIL;Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.97.100)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=WINT)))";
         //private static string _connectionString = $"User Id={Program.UsuarioBD};Password={Program.SenhaBD};Data Source={Program.AliasBD}";
+        //private static string _connectionString = "User Id=TESTE;Password=TESTE;Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.97.100)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=TESTE)))";
 
 
         //Abra o Developer Command Prompt for VS 2022
         //Va para a pasta do projeto - cd "C:\Projetos\rotinas-wint\Markup Laborsil"
         //msbuild "Markup Laborsil.csproj" /p:Configuration=Release
+        //Markup Laborsil -> C:\Projetos\rotinas-wint\Markup Laborsil\bin\Release\Markup Laborsil.exe
 
         public static OracleConnection GetConnection()
         {

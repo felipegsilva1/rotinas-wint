@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FiltroProdLog));
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
@@ -208,45 +209,45 @@
             this.FiltroProdGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.FiltroProdGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.FiltroProdGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FiltroProdGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FiltroProdGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.FiltroProdGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.FiltroProdGrid.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.FiltroProdGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.FiltroProdGrid.EnableHeadersVisualStyles = false;
             this.FiltroProdGrid.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.FiltroProdGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.FiltroProdGrid.Location = new System.Drawing.Point(20, 130);
             this.FiltroProdGrid.Name = "FiltroProdGrid";
             this.FiltroProdGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FiltroProdGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FiltroProdGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.FiltroProdGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.FiltroProdGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.FiltroProdGrid.Size = new System.Drawing.Size(498, 336);
             this.FiltroProdGrid.TabIndex = 11;
             this.FiltroProdGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FiltroProdGrid_CellDoubleClick);
             // 
-            // FiltroProd
+            // FiltroProdLog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -254,7 +255,8 @@
             this.Controls.Add(this.FiltroProdGrid);
             this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.metroPanel1);
-            this.Name = "FiltroProd";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "FiltroProdLog";
             this.Text = "Pesquisa de Produtos";
             this.Load += new System.EventHandler(this.FiltroProd_Load);
             this.metroPanel1.ResumeLayout(false);

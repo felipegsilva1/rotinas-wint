@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroMkp));
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
@@ -180,6 +181,7 @@
             this.Controls.Add(this.metroPanel3);
             this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.metroPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormCadastroMkp";
             this.Text = "Acompanhamento de Markup";
             this.Load += new System.EventHandler(this.FormCadastroMkp_Load);

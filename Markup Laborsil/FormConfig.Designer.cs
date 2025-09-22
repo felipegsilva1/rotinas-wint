@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConfig));
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.btConfigTabPreco = new MetroFramework.Controls.MetroRadioButton();
             this.btConfigMarca = new MetroFramework.Controls.MetroRadioButton();
@@ -192,6 +193,7 @@
             this.Controls.Add(this.metroPanel3);
             this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.metroPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormConfig";
             this.Text = "Acompanhamento de Markup";
             this.Load += new System.EventHandler(this.FormConfig_Load);
