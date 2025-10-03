@@ -27,7 +27,7 @@ namespace Markup_Laborsil.DAO
                 sql.Append(" AND UPPER(DESCRICAO) LIKE UPPER(:pdescricao) "); 
             }
 
-            sql.Append(" AND OBS2 <> 'FL' AND DTEXCLUSAO IS NULL ORDER BY CODPROD ");
+            sql.Append(" AND ((OBS2 IS NULL OR OBS2 = '') OR OBS2 <> 'FL') AND DTEXCLUSAO IS NULL ORDER BY CODPROD ");
 
             using (OracleConnection connection = Conexao.GetConnection())
             {
@@ -94,7 +94,7 @@ namespace Markup_Laborsil.DAO
                 sql.Append(" AND AD_TIPOATUPRECO = :tipoAtu ");
             }
 
-            sql.Append(" AND NVL(REVENDA, 'N') = 'S' AND OBS2 <> 'FL' AND DTEXCLUSAO IS NULL AND CODMARCA <> 1821 ORDER BY CODPROD ");
+            sql.Append(" AND NVL(REVENDA, 'N') = 'S' AND ((OBS2 IS NULL OR OBS2 = '') OR OBS2 <> 'FL') AND DTEXCLUSAO IS NULL AND CODMARCA <> 1821 ORDER BY CODPROD ");
 
             using (OracleConnection connection = Conexao.GetConnection())
             {

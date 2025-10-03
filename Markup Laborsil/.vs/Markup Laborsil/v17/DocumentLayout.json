@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Projetos\\rotinas-wint\\Markup Laborsil\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D68694F6-176A-4633-BC44-C8EE170AECA0}|Markup Laborsil.csproj|c:\\projetos\\rotinas-wint\\markup laborsil\\filtromarcalog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D68694F6-176A-4633-BC44-C8EE170AECA0}|Markup Laborsil.csproj|solutionrelative:filtromarcalog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{D68694F6-176A-4633-BC44-C8EE170AECA0}|Markup Laborsil.csproj|C:\\Projetos\\rotinas-wint\\Markup Laborsil\\conex\u00E3obd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D68694F6-176A-4633-BC44-C8EE170AECA0}|Markup Laborsil.csproj|solutionrelative:conex\u00E3obd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D68694F6-176A-4633-BC44-C8EE170AECA0}|Markup Laborsil.csproj|c:\\projetos\\rotinas-wint\\markup laborsil\\dao\\produtodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D68694F6-176A-4633-BC44-C8EE170AECA0}|Markup Laborsil.csproj|solutionrelative:dao\\produtodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D68694F6-176A-4633-BC44-C8EE170AECA0}|Markup Laborsil.csproj|C:\\Projetos\\rotinas-wint\\Markup Laborsil\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D68694F6-176A-4633-BC44-C8EE170AECA0}|Markup Laborsil.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +27,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FiltroMarcaLog.cs [Design]",
-              "DocumentMoniker": "C:\\Projetos\\rotinas-wint\\Markup Laborsil\\FiltroMarcaLog.cs",
-              "RelativeDocumentMoniker": "FiltroMarcaLog.cs",
-              "ToolTip": "C:\\Projetos\\rotinas-wint\\Markup Laborsil\\FiltroMarcaLog.cs [Design]",
-              "RelativeToolTip": "FiltroMarcaLog.cs [Design]",
+              "Title": "conex\u00E3obd.cs",
+              "DocumentMoniker": "C:\\Projetos\\rotinas-wint\\Markup Laborsil\\conex\u00E3obd.cs",
+              "RelativeDocumentMoniker": "conex\u00E3obd.cs",
+              "ToolTip": "C:\\Projetos\\rotinas-wint\\Markup Laborsil\\conex\u00E3obd.cs",
+              "RelativeToolTip": "conex\u00E3obd.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-22T21:24:46.473Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-09-23T15:00:24.491Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Projetos\\rotinas-wint\\Markup Laborsil\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Projetos\\rotinas-wint\\Markup Laborsil\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T15:00:17.851Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProdutoDAO.cs",
+              "DocumentMoniker": "C:\\Projetos\\rotinas-wint\\Markup Laborsil\\DAO\\ProdutoDAO.cs",
+              "RelativeDocumentMoniker": "DAO\\ProdutoDAO.cs",
+              "ToolTip": "C:\\Projetos\\rotinas-wint\\Markup Laborsil\\DAO\\ProdutoDAO.cs",
+              "RelativeToolTip": "DAO\\ProdutoDAO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T14:55:25.189Z",
+              "EditorCaption": ""
             }
           ]
         }
