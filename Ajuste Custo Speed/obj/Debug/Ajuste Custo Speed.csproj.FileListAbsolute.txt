@@ -1,0 +1,35 @@
+C:\Projetos\rotinas-wint\Ajuste Custo Speed\bin\Debug\Ajuste Custo Speed.exe.config
+C:\Projetos\rotinas-wint\Ajuste Custo Speed\bin\Debug\Ajuste Custo Speed.exe
+C:\Projetos\rotinas-wint\Ajuste Custo Speed\bin\Debug\Ajuste Custo Speed.pdb
+C:\Projetos\rotinas-wint\Ajuste Custo Speed\bin\Debug\ClosedXML.xml
+C:\Projetos\rotinas-wint\Ajuste Custo Speed\bin\Debug\ClosedXML.Parser.xml
+C:\Projetos\rotinas-wint\Ajuste Custo Speed\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Projetos\rotinas-wint\Ajuste Custo Speed\bin\Debug\DocumentFormat.OpenXml.Framework.xml
+C:\Projetos\rotinas-wint\Ajuste Custo Speed\bin\Debug\ExcelDataReader.xml
+C:\Projetos\rotinas-wint\Ajuste Custo Speed\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Projetos\rotinas-wint\Ajuste Custo Speed\bin\Debug\ExcelNumberFormat.xml
+C:\Projetos\rotinas-wint\Ajuste Custo Speed\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Projetos\rotinas-wint\Ajuste Custo Speed\bin\Debug\Microsoft.Bcl.HashCode.xml
+C:\Projetos\rotinas-wint\Ajuste Custo Speed\bin\Debug\RBush.xml
+C:\Projetos\rotinas-wint\Ajuste Custo Speed\bin\Debug\SixLabors.Fonts.xml
+C:\Projetos\rotinas-wint\Ajuste Custo Speed\bin\Debug\System.Buffers.xml
+C:\Projetos\rotinas-wint\Ajuste Custo Speed\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Projetos\rotinas-wint\Ajuste Custo Speed\bin\Debug\System.Formats.Asn1.xml
+C:\Projetos\rotinas-wint\Ajuste Custo Speed\bin\Debug\System.IO.Pipelines.xml
+C:\Projetos\rotinas-wint\Ajuste Custo Speed\bin\Debug\System.Memory.xml
+C:\Projetos\rotinas-wint\Ajuste Custo Speed\bin\Debug\System.Numerics.Vectors.xml
+C:\Projetos\rotinas-wint\Ajuste Custo Speed\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Projetos\rotinas-wint\Ajuste Custo Speed\bin\Debug\System.Text.Encoding.CodePages.xml
+C:\Projetos\rotinas-wint\Ajuste Custo Speed\bin\Debug\System.Text.Encodings.Web.xml
+C:\Projetos\rotinas-wint\Ajuste Custo Speed\bin\Debug\System.Text.Json.xml
+C:\Projetos\rotinas-wint\Ajuste Custo Speed\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Projetos\rotinas-wint\Ajuste Custo Speed\obj\Debug\Ajuste Custo Speed.csproj.AssemblyReference.cache
+C:\Projetos\rotinas-wint\Ajuste Custo Speed\obj\Debug\Ajuste_Custo_Speed.Form1.resources
+C:\Projetos\rotinas-wint\Ajuste Custo Speed\obj\Debug\Ajuste_Custo_Speed.Properties.Resources.resources
+C:\Projetos\rotinas-wint\Ajuste Custo Speed\obj\Debug\Ajuste Custo Speed.csproj.GenerateResource.cache
+C:\Projetos\rotinas-wint\Ajuste Custo Speed\obj\Debug\Ajuste Custo Speed.csproj.CoreCompileInputs.cache
+C:\Projetos\rotinas-wint\Ajuste Custo Speed\obj\Debug\Ajuste Custo Speed.csproj.Fody.CopyLocal.cache
+C:\Projetos\rotinas-wint\Ajuste Custo Speed\obj\Debug\Ajuste Custo Speed.csproj.Fody.RuntimeCopyLocal.cache
+C:\Projetos\rotinas-wint\Ajuste Custo Speed\obj\Debug\Ajuste C.28420AF5.Up2Date
+C:\Projetos\rotinas-wint\Ajuste Custo Speed\obj\Debug\Ajuste Custo Speed.exe
+C:\Projetos\rotinas-wint\Ajuste Custo Speed\obj\Debug\Ajuste Custo Speed.pdb

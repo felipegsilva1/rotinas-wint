@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Projetos\\rotinas-wint\\Markup Laborsil\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D68694F6-176A-4633-BC44-C8EE170AECA0}|Markup Laborsil.csproj|c:\\projetos\\rotinas-wint\\markup laborsil\\dao\\produtodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D68694F6-176A-4633-BC44-C8EE170AECA0}|Markup Laborsil.csproj|solutionrelative:dao\\produtodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D68694F6-176A-4633-BC44-C8EE170AECA0}|Markup Laborsil.csproj|C:\\Projetos\\rotinas-wint\\Markup Laborsil\\conex\u00E3obd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D68694F6-176A-4633-BC44-C8EE170AECA0}|Markup Laborsil.csproj|solutionrelative:conex\u00E3obd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D68694F6-176A-4633-BC44-C8EE170AECA0}|Markup Laborsil.csproj|c:\\projetos\\rotinas-wint\\markup laborsil\\dao\\produtodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D68694F6-176A-4633-BC44-C8EE170AECA0}|Markup Laborsil.csproj|solutionrelative:dao\\produtodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D68694F6-176A-4633-BC44-C8EE170AECA0}|Markup Laborsil.csproj|C:\\Projetos\\rotinas-wint\\Markup Laborsil\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -22,11 +22,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "conex\u00E3obd.cs",
               "DocumentMoniker": "C:\\Projetos\\rotinas-wint\\Markup Laborsil\\conex\u00E3obd.cs",
               "RelativeDocumentMoniker": "conex\u00E3obd.cs",
@@ -34,7 +34,8 @@
               "RelativeToolTip": "conex\u00E3obd.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-23T15:00:24.491Z"
+              "WhenOpened": "2025-09-23T15:00:24.491Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -50,7 +51,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ProdutoDAO.cs",
               "DocumentMoniker": "C:\\Projetos\\rotinas-wint\\Markup Laborsil\\DAO\\ProdutoDAO.cs",
               "RelativeDocumentMoniker": "DAO\\ProdutoDAO.cs",
